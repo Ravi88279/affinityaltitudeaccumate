@@ -11,8 +11,8 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>APT Business Services - Professional Accounting & Bookkeeping</title>
-        <meta name="description" content="APT Business Services provides expert bookkeeping, accounting, and taxation services to help your business thrive." />
+        <title>Affinity Altitude Accumate - Professional Accounting & Bookkeeping</title>
+        <meta name="description" content="Affinity Altitude Accumate provides expert bookkeeping, accounting, and taxation services to help your business thrive." />
       </Helmet>
       
       <div className="flex flex-col min-h-screen">

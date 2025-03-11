@@ -43,8 +43,12 @@ const Contact = () => {
   };
   
   return (
-    <section className="section-padding bg-white">
-      <div className="container-tight">
+    <section className="section-padding bg-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-apt-blue/10 rounded-full filter blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-apt-lightblue/10 rounded-full filter blur-3xl"></div>
+      
+      <div className="container-tight relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-up">
           <div className="text-apt-blue font-medium mb-3">Contact Us</div>
           <h2 className="heading-underline-center mb-6">Get In Touch With Our Team</h2>
@@ -59,28 +63,28 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-medium mb-6">Contact Information</h3>
               <ul className="space-y-6">
-                <li className="flex items-start">
-                  <MapPinIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1" />
+                <li className="flex items-start group">
+                  <MapPinIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" />
                   <div>
                     <h4 className="font-medium mb-1">Our Office</h4>
-                    <p className="opacity-80">123 Business Street, Sydney, NSW 2000</p>
+                    <p className="opacity-80 group-hover:opacity-100 transition-opacity duration-300">Office no. 1024, 10th floor, Sun Gravitas, near. Shyamal Cross Road, Rajmani Society, Satellite, Ahmedabad, Gujarat 380015</p>
                   </div>
                 </li>
-                <li className="flex items-start">
-                  <PhoneIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1" />
+                <li className="flex items-start group">
+                  <PhoneIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" />
                   <div>
                     <h4 className="font-medium mb-1">Phone Number</h4>
-                    <a href="tel:+61299998888" className="opacity-80 hover:text-apt-blue transition-colors duration-200">
-                      (02) 9999 8888
+                    <a href="tel:+918866689174" className="opacity-80 hover:text-apt-blue transition-colors duration-200">
+                      +91 8866689174
                     </a>
                   </div>
                 </li>
-                <li className="flex items-start">
-                  <MailIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1" />
+                <li className="flex items-start group">
+                  <MailIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" />
                   <div>
                     <h4 className="font-medium mb-1">Email Address</h4>
-                    <a href="mailto:info@aptbusiness.com.au" className="opacity-80 hover:text-apt-blue transition-colors duration-200">
-                      info@aptbusiness.com.au
+                    <a href="mailto:affinityaltitudeaccumate@gmail.com" className="opacity-80 hover:text-apt-blue transition-colors duration-200">
+                      affinityaltitudeaccumate@gmail.com
                     </a>
                   </div>
                 </li>
@@ -107,12 +111,12 @@ const Contact = () => {
           </div>
           
           <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
-            <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+            <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
               <h3 className="text-2xl font-medium mb-6">Send Us a Message</h3>
               
               {isSubmitted ? (
-                <div className="text-center py-8">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 mb-4">
+                <div className="text-center py-8 animate-fade-in">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 mb-4 animate-bounce-slow">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h4 className="text-xl font-medium mb-2">Message Sent!</h4>
@@ -164,7 +168,7 @@ const Contact = () => {
                         value={formState.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-apt-blue focus:ring focus:ring-apt-blue/20 transition-all outline-none"
-                        placeholder="(02) 1234 5678"
+                        placeholder="+91 9999999999"
                       />
                     </div>
                   </div>
@@ -188,7 +192,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-primary w-full flex items-center justify-center"
+                    className="btn-primary w-full flex items-center justify-center group hover:scale-105 transition-transform duration-300"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center">
@@ -201,7 +205,7 @@ const Contact = () => {
                     ) : (
                       <span className="flex items-center">
                         Send Message
-                        <Send className="ml-2 h-4 w-4" />
+                        <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </span>
                     )}
                   </button>

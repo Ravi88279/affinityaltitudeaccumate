@@ -49,10 +49,10 @@ const Navbar = () => {
           {/* Logo */}
           <Link 
             to="/" 
-            className="relative z-10 font-bold text-2xl text-apt-darkgray flex items-center"
-            aria-label="APT Business Services Logo"
+            className="relative z-10 font-bold text-2xl text-apt-darkgray flex items-center hover:scale-105 transition-transform duration-300"
+            aria-label="Affinity Altitude Accumate Logo"
           >
-            <span className="text-apt-blue">APT</span> Business Services
+            <span className="text-apt-blue">Affinity Altitude</span> Accumate
           </Link>
           
           {/* Desktop Menu */}
@@ -62,8 +62,8 @@ const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "nav-link",
-                  isActive(link.path) && "nav-link-active"
+                  "nav-link relative overflow-hidden",
+                  isActive(link.path) ? "nav-link-active" : "after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:translate-y-1 after:bg-apt-blue after:opacity-0 hover:after:translate-y-0 hover:after:opacity-100 after:transition-all after:duration-300"
                 )}
               >
                 {link.name}

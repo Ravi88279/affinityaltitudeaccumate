@@ -52,8 +52,8 @@ const ContactPage = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us - APT Business Services</title>
-        <meta name="description" content="Contact APT Business Services for professional accounting, bookkeeping, and taxation services. We're here to help with all your financial needs." />
+        <title>Contact Us - Affinity Altitude Accumate</title>
+        <meta name="description" content="Contact Affinity Altitude Accumate for professional accounting, bookkeeping, and taxation services. We're here to help with all your financial needs." />
       </Helmet>
       
       <div className="flex flex-col min-h-screen">
@@ -62,6 +62,22 @@ const ContactPage = () => {
           {/* Hero Section */}
           <section className="bg-apt-blue text-white py-20 relative overflow-hidden">
             <div className="absolute inset-0 bg-apt-blue/30 mix-blend-overlay" />
+            <div className="absolute inset-0 overflow-hidden">
+              {[...Array(15)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute rounded-full bg-white/10 animate-float"
+                  style={{
+                    width: `${Math.random() * 30 + 10}px`,
+                    height: `${Math.random() * 30 + 10}px`,
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                    animationDuration: `${Math.random() * 15 + 10}s`,
+                    animationDelay: `${Math.random() * 5}s`,
+                  }}
+                ></div>
+              ))}
+            </div>
             <div className="container-tight relative z-10">
               <div className="max-w-3xl mx-auto text-center animate-fade-up">
                 <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Get In Touch</h1>
@@ -73,8 +89,11 @@ const ContactPage = () => {
           </section>
           
           {/* Contact Form Section */}
-          <section className="py-20 bg-white">
-            <div className="container-tight">
+          <section className="py-20 bg-white relative overflow-hidden">
+            <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-apt-blue/10 rounded-full filter blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-apt-lightblue/10 rounded-full filter blur-3xl"></div>
+            
+            <div className="container-tight relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <div className="space-y-10 animate-fade-up">
                   <div>
@@ -85,28 +104,28 @@ const ContactPage = () => {
                     </p>
                     
                     <ul className="space-y-8">
-                      <li className="flex items-start">
-                        <MapPinIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1" />
+                      <li className="flex items-start group">
+                        <MapPinIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" />
                         <div>
                           <h4 className="font-medium mb-1">Our Office</h4>
-                          <p className="opacity-80">123 Business Street, Sydney, NSW 2000</p>
+                          <p className="opacity-80 group-hover:opacity-100 transition-opacity duration-300">Office no. 1024, 10th floor, Sun Gravitas, near. Shyamal Cross Road, Rajmani Society, Satellite, Ahmedabad, Gujarat 380015</p>
                         </div>
                       </li>
-                      <li className="flex items-start">
-                        <PhoneIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1" />
+                      <li className="flex items-start group">
+                        <PhoneIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" />
                         <div>
                           <h4 className="font-medium mb-1">Phone Number</h4>
-                          <a href="tel:+61299998888" className="opacity-80 hover:text-apt-blue transition-colors duration-200">
-                            (02) 9999 8888
+                          <a href="tel:+918866689174" className="opacity-80 hover:text-apt-blue transition-colors duration-200">
+                            +91 8866689174
                           </a>
                         </div>
                       </li>
-                      <li className="flex items-start">
-                        <MailIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1" />
+                      <li className="flex items-start group">
+                        <MailIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" />
                         <div>
                           <h4 className="font-medium mb-1">Email Address</h4>
-                          <a href="mailto:info@aptbusiness.com.au" className="opacity-80 hover:text-apt-blue transition-colors duration-200">
-                            info@aptbusiness.com.au
+                          <a href="mailto:affinityaltitudeaccumate@gmail.com" className="opacity-80 hover:text-apt-blue transition-colors duration-200">
+                            affinityaltitudeaccumate@gmail.com
                           </a>
                         </div>
                       </li>
@@ -116,22 +135,22 @@ const ContactPage = () => {
                   <div>
                     <h3 className="text-2xl font-medium mb-6">Business Hours</h3>
                     <ul className="space-y-3">
-                      <li className="flex justify-between">
+                      <li className="flex justify-between group hover:bg-apt-gray p-2 rounded-md transition-all duration-300">
                         <span className="font-medium">Monday - Friday</span>
-                        <span className="opacity-80">9:00 AM - 5:00 PM</span>
+                        <span className="opacity-80 group-hover:text-apt-blue group-hover:opacity-100 transition-all duration-300">9:00 AM - 5:00 PM</span>
                       </li>
-                      <li className="flex justify-between">
+                      <li className="flex justify-between group hover:bg-apt-gray p-2 rounded-md transition-all duration-300">
                         <span className="font-medium">Saturday</span>
-                        <span className="opacity-80">10:00 AM - 2:00 PM</span>
+                        <span className="opacity-80 group-hover:text-apt-blue group-hover:opacity-100 transition-all duration-300">10:00 AM - 2:00 PM</span>
                       </li>
-                      <li className="flex justify-between">
+                      <li className="flex justify-between group hover:bg-apt-gray p-2 rounded-md transition-all duration-300">
                         <span className="font-medium">Sunday</span>
-                        <span className="opacity-80">Closed</span>
+                        <span className="opacity-80 group-hover:text-apt-blue group-hover:opacity-100 transition-all duration-300">Closed</span>
                       </li>
                     </ul>
                   </div>
                   
-                  <div className="bg-apt-gray p-8 rounded-lg">
+                  <div className="bg-apt-gray p-8 rounded-lg hover:shadow-lg transition-shadow duration-300">
                     <h3 className="text-2xl font-medium mb-4">Location Map</h3>
                     <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
                       {/* We'd use an actual map here, but for this example, we'll use a placeholder */}
@@ -143,17 +162,17 @@ const ContactPage = () => {
                 </div>
                 
                 <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
-                  <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+                  <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                     <h2 className="text-3xl font-semibold mb-6">Send Us a Message</h2>
                     
                     {isSubmitted ? (
-                      <div className="text-center py-16">
-                        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 text-green-600 mb-6">
+                      <div className="text-center py-16 animate-fade-in">
+                        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 text-green-600 mb-6 animate-bounce-slow">
                           <CheckCircle2 className="w-10 h-10" />
                         </div>
                         <h3 className="text-2xl font-medium mb-4">Message Sent Successfully!</h3>
                         <p className="text-lg opacity-80 max-w-md mx-auto">
-                          Thank you for contacting APT Business Services. We'll review your message and get back to you shortly.
+                          Thank you for contacting Affinity Altitude Accumate. We'll review your message and get back to you shortly.
                         </p>
                       </div>
                     ) : (
@@ -204,7 +223,7 @@ const ContactPage = () => {
                               value={formState.phone}
                               onChange={handleChange}
                               className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-apt-blue focus:ring focus:ring-apt-blue/20 transition-all outline-none"
-                              placeholder="(02) 1234 5678"
+                              placeholder="+91 9999999999"
                             />
                           </div>
                           
@@ -265,7 +284,7 @@ const ContactPage = () => {
                         <button
                           type="submit"
                           disabled={isSubmitting}
-                          className="btn-primary w-full flex items-center justify-center"
+                          className="btn-primary w-full flex items-center justify-center group hover:scale-105 transition-transform duration-300"
                         >
                           {isSubmitting ? (
                             <span className="flex items-center">
@@ -278,7 +297,7 @@ const ContactPage = () => {
                           ) : (
                             <span className="flex items-center">
                               Send Message
-                              <Send className="ml-2 h-4 w-4" />
+                              <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                             </span>
                           )}
                         </button>
@@ -319,7 +338,7 @@ const ContactPage = () => {
                   },
                   {
                     question: "Can you help with tax planning and minimization?",
-                    answer: "Yes, our tax specialists are experienced in developing strategies to legally minimize your tax obligations while ensuring full compliance with Australian tax laws and regulations."
+                    answer: "Yes, our tax specialists are experienced in developing strategies to legally minimize your tax obligations while ensuring full compliance with Indian tax laws and regulations."
                   },
                   {
                     question: "Do you work with businesses in specific industries?",
@@ -328,7 +347,7 @@ const ContactPage = () => {
                 ].map((faq, index) => (
                   <div 
                     key={index} 
-                    className="bg-white p-6 rounded-lg shadow-sm animate-fade-up"
+                    className="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-1 transition-transform duration-300"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <h3 className="text-xl font-medium mb-3">{faq.question}</h3>
