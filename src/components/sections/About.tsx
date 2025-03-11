@@ -46,7 +46,7 @@ const About = () => {
             <div className="text-apt-blue font-medium">About Us</div>
             <h2 className="heading-underline">Professional Financial Services You Can Trust</h2>
             <p className="text-lg">
-              At APT Business Services, we're committed to providing quality accounting and bookkeeping services to businesses of all sizes. With over 15 years of experience, our team has the expertise to handle all your financial needs.
+              At Affinity Altitude Accumate, we're committed to providing quality accounting and bookkeeping services to businesses of all sizes. With over 15 years of experience, our team has the expertise to handle all your financial needs.
             </p>
             
             <ul className="space-y-3 mt-8">

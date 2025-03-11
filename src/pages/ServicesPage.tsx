@@ -80,8 +80,8 @@ const ServicesPage = () => {
   return (
     <>
       <Helmet>
-        <title>Our Services - APT Business Services</title>
-        <meta name="description" content="Explore the comprehensive range of accounting, bookkeeping, and financial services offered by APT Business Services." />
+        <title>Our Services - Affinity Altitude Accumate</title>
+        <meta name="description" content="Explore the comprehensive range of accounting, bookkeeping, and financial services offered by Affinity Altitude Accumate." />
       </Helmet>
       
       <div className="flex flex-col min-h-screen">
@@ -143,10 +143,10 @@ const ServicesPage = () => {
                 <div className="space-y-6 order-1 lg:order-2 animate-fade-up">
                   <div className="text-apt-blue font-medium">Why Choose Us</div>
                   <h2 className="heading-underline text-3xl md:text-4xl font-semibold mb-6">
-                    The APT Advantage
+                    The Affinity Altitude Advantage
                   </h2>
                   <p className="text-lg">
-                    When you choose APT Business Services, you're not just getting a service provider – 
+                    When you choose Affinity Altitude Accumate, you're not just getting a service provider – 
                     you're gaining a trusted partner committed to your financial success.
                   </p>
                   

@@ -44,7 +44,7 @@ const Hero = () => {
               Our professional team is dedicated to delivering accurate and timely financial solutions.
             </p>
             
-            <div className="flex flex-wrap gap-4 pt-2 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+            <div className="flex flex-wrap gap-4 pt-2 animate-fade-up relative z-30" style={{ animationDelay: '0.4s' }}>
               <Link to="/contact" className="btn-primary flex items-center group hover:scale-105 transition-transform duration-300">
                 Get Started
                 <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

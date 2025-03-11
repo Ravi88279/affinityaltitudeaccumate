@@ -61,7 +61,7 @@ const Services = () => {
           ))}
         </div>
         
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 relative z-30">
           <Link to="/services" className="btn-primary inline-flex items-center">
             Explore All Services
           </Link>
