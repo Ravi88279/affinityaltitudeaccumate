@@ -38,7 +38,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="bg-white section-padding" id="services">
+    <section className="bg-white section-padding relative z-20" id="services">
       <div className="container-tight">
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-up">
           <div className="text-apt-blue font-medium mb-3">Our Services</div>

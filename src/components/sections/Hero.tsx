@@ -27,9 +27,9 @@ const Hero = () => {
         ))}
       </div>
       
-      <div className="container-tight min-h-[70vh] md:min-h-[80vh] flex flex-col justify-center">
+      <div className="container-tight min-h-[70vh] md:min-h-[80vh] flex flex-col justify-center relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 animate-fade-in z-10">
+          <div className="space-y-6 animate-fade-in">
             <div className="inline-block bg-apt-blue/10 text-apt-blue font-medium px-4 py-1 rounded-full text-sm animate-pulse-slow">
               Professional Accounting & Bookkeeping Services
             </div>
@@ -55,7 +55,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="relative flex justify-center lg:justify-end animate-fade-in z-10">
+          <div className="relative flex justify-center lg:justify-end animate-fade-in">
             <div className="relative">
               <div className="absolute inset-0 bg-apt-blue rounded-2xl -rotate-3 opacity-10 animate-pulse-slow"></div>
               <img 
