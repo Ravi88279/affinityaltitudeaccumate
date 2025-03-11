@@ -21,12 +21,12 @@ const EditorBanner = () => {
             </p>
             <div className="mt-3">
               <a 
-                href="https://www.lovable.dev" 
+                href="https://www.wix.com/signin" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-white bg-apt-blue px-4 py-2 rounded-md text-sm font-medium hover:bg-apt-blue/90 transition-colors duration-200"
               >
-                Open Editor
+                Open Wix Editor
                 <ExternalLink className="ml-1.5 w-3.5 h-3.5" />
               </a>
             </div>

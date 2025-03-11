@@ -40,23 +40,24 @@ const Navbar = () => {
   return (
     <header 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-2",
         scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-transparent"
       )}
     >
       <div className="container-tight">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link 
             to="/" 
-            className="relative z-10 font-bold text-2xl text-apt-darkgray flex items-center hover:scale-105 transition-transform duration-300"
+            className="relative z-20 font-bold text-xl sm:text-2xl text-apt-darkgray flex items-center hover:scale-105 transition-transform duration-300"
             aria-label="Affinity Altitude Accumate Logo"
           >
-            <span className="text-apt-blue">Affinity Altitude</span> Accumate
+            <span className="text-apt-blue">Affinity Altitude</span>
+            <span className="hidden sm:inline"> Accumate</span>
           </Link>
           
           {/* Desktop Menu */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -74,7 +75,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden relative z-10 p-2"
+            className="md:hidden relative z-20 p-2"
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
             {isOpen ? (
@@ -87,7 +88,7 @@ const Navbar = () => {
           {/* Mobile Menu */}
           <div 
             className={cn(
-              "fixed inset-0 bg-white z-0 flex flex-col justify-center items-center transition-all duration-300 md:hidden",
+              "fixed inset-0 bg-white z-10 flex flex-col justify-center items-center transition-all duration-300 md:hidden",
               isOpen ? "opacity-100 visible" : "opacity-0 invisible"
             )}
           >
