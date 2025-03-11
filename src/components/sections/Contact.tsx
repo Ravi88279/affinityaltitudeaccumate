@@ -1,0 +1,218 @@
+
+import { FormEvent, useState } from 'react';
+import { MailIcon, MapPinIcon, PhoneIcon, Send, CheckCircle2 } from 'lucide-react';
+
+const Contact = () => {
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value,
+    });
+  };
+  
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      setFormState({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+      });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 5000);
+    }, 1500);
+  };
+  
+  return (
+    <section className="section-padding bg-white">
+      <div className="container-tight">
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-up">
+          <div className="text-apt-blue font-medium mb-3">Contact Us</div>
+          <h2 className="heading-underline-center mb-6">Get In Touch With Our Team</h2>
+          <p className="text-lg opacity-80">
+            Have questions about our services? Ready to get started? 
+            Our team is here to help with all your financial needs.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="space-y-8 animate-fade-up">
+            <div>
+              <h3 className="text-2xl font-medium mb-6">Contact Information</h3>
+              <ul className="space-y-6">
+                <li className="flex items-start">
+                  <MapPinIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1" />
+                  <div>
+                    <h4 className="font-medium mb-1">Our Office</h4>
+                    <p className="opacity-80">123 Business Street, Sydney, NSW 2000</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <PhoneIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1" />
+                  <div>
+                    <h4 className="font-medium mb-1">Phone Number</h4>
+                    <a href="tel:+61299998888" className="opacity-80 hover:text-apt-blue transition-colors duration-200">
+                      (02) 9999 8888
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <MailIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1" />
+                  <div>
+                    <h4 className="font-medium mb-1">Email Address</h4>
+                    <a href="mailto:info@aptbusiness.com.au" className="opacity-80 hover:text-apt-blue transition-colors duration-200">
+                      info@aptbusiness.com.au
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-2xl font-medium mb-6">Business Hours</h3>
+              <ul className="space-y-3">
+                <li className="flex justify-between">
+                  <span className="font-medium">Monday - Friday</span>
+                  <span className="opacity-80">9:00 AM - 5:00 PM</span>
+                </li>
+                <li className="flex justify-between">
+                  <span className="font-medium">Saturday</span>
+                  <span className="opacity-80">10:00 AM - 2:00 PM</span>
+                </li>
+                <li className="flex justify-between">
+                  <span className="font-medium">Sunday</span>
+                  <span className="opacity-80">Closed</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
+            <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+              <h3 className="text-2xl font-medium mb-6">Send Us a Message</h3>
+              
+              {isSubmitted ? (
+                <div className="text-center py-8">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 mb-4">
+                    <CheckCircle2 className="w-8 h-8" />
+                  </div>
+                  <h4 className="text-xl font-medium mb-2">Message Sent!</h4>
+                  <p className="opacity-80">Thank you for contacting us. We'll get back to you shortly.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-apt-darkgray mb-1">
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formState.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-apt-blue focus:ring focus:ring-apt-blue/20 transition-all outline-none"
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-apt-darkgray mb-1">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formState.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-apt-blue focus:ring focus:ring-apt-blue/20 transition-all outline-none"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium text-apt-darkgray mb-1">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formState.phone}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-apt-blue focus:ring focus:ring-apt-blue/20 transition-all outline-none"
+                        placeholder="(02) 1234 5678"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-apt-darkgray mb-1">
+                      Your Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formState.message}
+                      onChange={handleChange}
+                      required
+                      rows={4}
+                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-apt-blue focus:ring focus:ring-apt-blue/20 transition-all outline-none resize-none"
+                      placeholder="How can we help you?"
+                    />
+                  </div>
+                  
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="btn-primary w-full flex items-center justify-center"
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center">
+                        <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </span>
+                    ) : (
+                      <span className="flex items-center">
+                        Send Message
+                        <Send className="ml-2 h-4 w-4" />
+                      </span>
+                    )}
+                  </button>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
