@@ -2,48 +2,15 @@
 import { Helmet } from 'react-helmet';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import ServiceCard from '@/components/ui/ServiceCard';
 import { Link } from 'react-router-dom';
+import { serviceData } from '@/data/serviceData';
 import { 
-  BookOpenCheck, Calculator, ClipboardCheck, CreditCard, 
-  FileSpreadsheet, PenSquare, BarChart3, Building2, 
-  DollarSign, Landmark, ShieldCheck, TrendingUp
+  BarChart3, Building2, 
+  DollarSign, Landmark, 
+  ShieldCheck, TrendingUp
 } from 'lucide-react';
 
 const ServicesPage = () => {
-  const coreServices = [
-    {
-      title: 'Bookkeeping',
-      description: 'Comprehensive bookkeeping services to maintain accurate financial records, including accounts payable, accounts receivable, bank reconciliations, and more.',
-      icon: <BookOpenCheck className="w-full h-full" />
-    },
-    {
-      title: 'Accounting',
-      description: 'Expert accounting services to analyze and interpret financial data, prepare financial statements, and provide insights for informed business decisions.',
-      icon: <Calculator className="w-full h-full" />
-    },
-    {
-      title: 'Taxation',
-      description: 'Professional tax preparation and planning services for individuals and businesses, ensuring compliance while maximizing eligible deductions and credits.',
-      icon: <ClipboardCheck className="w-full h-full" />
-    },
-    {
-      title: 'Payroll Services',
-      description: 'Complete payroll processing solutions including pay calculations, tax withholdings, superannuation contributions, and compliance with employment regulations.',
-      icon: <CreditCard className="w-full h-full" />
-    },
-    {
-      title: 'Financial Reporting',
-      description: 'Detailed financial reports tailored to your business needs, providing clear insights into performance, position, and cash flow for better decision-making.',
-      icon: <FileSpreadsheet className="w-full h-full" />
-    },
-    {
-      title: 'Business Advisory',
-      description: 'Strategic business advice and consulting services to help optimize operations, improve profitability, and achieve long-term growth objectives.',
-      icon: <PenSquare className="w-full h-full" />
-    }
-  ];
-  
   const specializedServices = [
     {
       title: 'Financial Analysis',
@@ -89,19 +56,19 @@ const ServicesPage = () => {
         <main className="flex-grow pt-20">
           {/* Hero Section */}
           <section className="bg-apt-blue text-white py-20 relative overflow-hidden">
-            <div className="absolute inset-0 bg-apt-blue/30 mix-blend-overlay" />
+            <div className="absolute inset-0 bg-gradient-to-r from-apt-blue to-apt-lightblue/70 mix-blend-overlay" />
             <div className="container-tight relative z-10">
               <div className="max-w-3xl mx-auto text-center animate-fade-up">
                 <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Our Services</h1>
                 <p className="text-xl text-white/90 leading-relaxed">
-                  Comprehensive financial solutions tailored to meet the unique needs of your business.
+                  Comprehensive financial solutions tailored to meet the unique needs of your Australian business.
                 </p>
               </div>
             </div>
           </section>
           
           {/* Core Services */}
-          <section className="py-20 bg-white">
+          <section className="py-20 bg-[#f9f9ff]">
             <div className="container-tight">
               <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
                 <div className="text-apt-blue font-medium mb-3">Core Services</div>
@@ -115,13 +82,19 @@ const ServicesPage = () => {
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {coreServices.map((service, index) => (
+                {serviceData.map((service, index) => (
                   <div key={index} className="animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                    <ServiceCard
-                      title={service.title}
-                      description={service.description}
-                      icon={service.icon}
-                    />
+                    <Link to={`/services/${service.id}`} className="block h-full">
+                      <div className="bg-white rounded-lg p-6 shadow-sm card-hover border border-gray-100 h-full">
+                        <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                          <div className="text-apt-blue w-8 h-8">
+                            {service.icon}
+                          </div>
+                        </div>
+                        <h3 className="text-xl font-medium mb-3">{service.title}</h3>
+                        <p className="text-apt-text">{service.description}</p>
+                      </div>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -129,7 +102,7 @@ const ServicesPage = () => {
           </section>
           
           {/* Why Choose Us */}
-          <section className="py-20 bg-apt-gray">
+          <section className="py-20 bg-white">
             <div className="container-tight">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="relative order-2 lg:order-1 animate-fade-in">
@@ -146,8 +119,7 @@ const ServicesPage = () => {
                     The Affinity Altitude Advantage
                   </h2>
                   <p className="text-lg">
-                    When you choose Affinity Altitude Accumate, you're not just getting a service provider – 
-                    you're gaining a trusted partner committed to your financial success.
+                    As a new firm in the Australian market, Affinity Altitude Accumate brings a fresh perspective to accounting and bookkeeping services, combining innovative approaches with solid industry expertise.
                   </p>
                   
                   <ul className="space-y-4 mt-8">
@@ -205,7 +177,7 @@ const ServicesPage = () => {
           </section>
           
           {/* Specialized Services */}
-          <section className="py-20 bg-white">
+          <section className="py-20 bg-[#f9f9ff]">
             <div className="container-tight">
               <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
                 <div className="text-apt-blue font-medium mb-3">Specialized Services</div>
@@ -221,11 +193,15 @@ const ServicesPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {specializedServices.map((service, index) => (
                   <div key={index} className="animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                    <ServiceCard
-                      title={service.title}
-                      description={service.description}
-                      icon={service.icon}
-                    />
+                    <div className="bg-white rounded-lg p-6 shadow-sm card-hover border border-gray-100 h-full">
+                      <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <div className="text-apt-blue w-8 h-8">
+                          {service.icon}
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-medium mb-3">{service.title}</h3>
+                      <p className="text-apt-text">{service.description}</p>
+                    </div>
                   </div>
                 ))}
               </div>

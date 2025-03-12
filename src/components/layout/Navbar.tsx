@@ -53,7 +53,7 @@ const Navbar = () => {
             aria-label="Affinity Altitude Accumate Logo"
           >
             <span className="text-apt-blue">Affinity Altitude</span>
-            <span className="hidden sm:inline"> Accumate</span>
+            <span className="hidden sm:inline">&nbsp;Accumate</span>
           </Link>
           
           {/* Desktop Menu */}
