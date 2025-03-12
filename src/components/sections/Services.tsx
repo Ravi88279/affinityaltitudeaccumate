@@ -14,7 +14,7 @@ const Services = () => {
     {
       title: 'Accounting',
       description: 'Comprehensive accounting services to track, analyze, and report your financial information.',
-      details: 'Our accounting services go beyond basic bookkeeping to provide in-depth financial analysis, management reporting, and strategic insights. We help you understand your business's financial health through detailed profit and loss statements, balance sheets, cash flow analyses, and customized financial reports designed to highlight key performance indicators relevant to your specific industry and business goals.',
+      details: 'Our accounting services go beyond basic bookkeeping to provide in-depth financial analysis, management reporting, and strategic insights. We help you understand your business\'s financial health through detailed profit and loss statements, balance sheets, cash flow analyses, and customized financial reports designed to highlight key performance indicators relevant to your specific industry and business goals.',
       icon: <Calculator className="w-full h-full" />
     },
     {
