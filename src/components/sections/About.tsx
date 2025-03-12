@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const About = () => {
   const features = [
-    'Experienced team of accountants and bookkeepers',
+    'Dedicated team of accountants and bookkeepers',
     'Personalized service tailored to your business needs',
     'Fixed fee structures with no hidden costs',
     'Timely and accurate financial reporting',
@@ -46,7 +46,7 @@ const About = () => {
             <div className="text-apt-blue font-medium">About Us</div>
             <h2 className="heading-underline">Professional Financial Services You Can Trust</h2>
             <p className="text-lg">
-              At Affinity Altitude Accumate, we're committed to providing quality accounting and bookkeeping services to businesses of all sizes. With over 15 years of experience, our team has the expertise to handle all your financial needs.
+              At Affinity Altitude Accumate, we're a new firm bringing fresh perspectives to professional accounting and bookkeeping services. While new to the market, our team combines experience with innovation to serve businesses of all sizes.
             </p>
             
             <ul className="space-y-3 mt-8">

@@ -2,7 +2,7 @@
 import { Helmet } from 'react-helmet';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import { Check, Users, Award, BadgeCheck, Sparkles } from 'lucide-react';
+import { Check, Users, Award, BadgeCheck } from 'lucide-react';
 
 const AboutPage = () => {
   return (
@@ -53,7 +53,7 @@ const AboutPage = () => {
                 <div className="space-y-6 animate-fade-up">
                   <div className="text-apt-blue font-medium">Our Story</div>
                   <h2 className="heading-underline text-3xl md:text-4xl font-semibold mb-6">
-                    A Commitment to Excellence Since 2018
+                    A New Vision for Financial Services
                   </h2>
                   <p className="text-lg">
                     Affinity Altitude Accumate was founded with a simple mission: to provide small and 
@@ -61,14 +61,14 @@ const AboutPage = () => {
                     personalized, and of the highest quality.
                   </p>
                   <p>
-                    Over the years, we've grown from a small practice to a respected firm serving 
-                    clients across various industries. Our success is built on strong client relationships, 
-                    technical expertise, and a commitment to excellence in everything we do.
+                    As a new firm, we bring fresh perspectives and innovative approaches to traditional 
+                    accounting practices. While we may be new to the market, our team combines years of 
+                    professional experience with enthusiasm and dedication to deliver exceptional service.
                   </p>
                   <p>
-                    Today, we continue to embrace technology and innovation while maintaining our 
-                    personal approach to client service. Our team of professionals is dedicated to 
-                    helping businesses navigate financial challenges and achieve their goals.
+                    We believe in building strong relationships with our clients from day one, taking the time 
+                    to understand your unique needs and challenges. Our commitment is to grow alongside our 
+                    clients, providing the financial clarity and support needed for success.
                   </p>
                 </div>
                 
@@ -80,8 +80,8 @@ const AboutPage = () => {
                     className="rounded-lg shadow-lg img-zoom relative z-10"
                   />
                   <div className="absolute -bottom-6 -right-6 bg-apt-blue text-white px-6 py-4 rounded-lg shadow-lg animate-bounce-slow">
-                    <p className="font-bold text-xl">5+ Years</p>
-                    <p className="text-sm text-white/80">Of Excellence</p>
+                    <p className="font-bold text-xl">New Firm</p>
+                    <p className="text-sm text-white/80">Fresh Approach</p>
                   </div>
                 </div>
               </div>
@@ -143,62 +143,6 @@ const AboutPage = () => {
                     Our clients can count on us to deliver accurate, timely services they can depend on for critical decisions.
                   </p>
                 </div>
-              </div>
-            </div>
-          </section>
-          
-          {/* Added New Achievements Section to replace Team Section */}
-          <section className="py-20 bg-white relative overflow-hidden">
-            <div className="absolute top-20 right-20 w-64 h-64 bg-apt-blue/5 rounded-full filter blur-3xl"></div>
-            <div className="container-tight relative z-10">
-              <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
-                <div className="text-apt-blue font-medium mb-3">Our Achievements</div>
-                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-6">
-                  Recognized Excellence
-                </h2>
-                <p className="text-lg opacity-80">
-                  We take pride in our work and the recognition we've received for our commitment to quality and client satisfaction.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {[
-                  {
-                    title: "Financial Excellence Award",
-                    year: "2022",
-                    description: "Recognized for outstanding achievement in providing quality financial services to small businesses."
-                  },
-                  {
-                    title: "Client Satisfaction",
-                    year: "2023",
-                    description: "Achieved 98% client satisfaction rate across all our service offerings."
-                  },
-                  {
-                    title: "Business Growth Partnership",
-                    year: "2023",
-                    description: "Acknowledged for helping 50+ businesses achieve significant growth through strategic financial guidance."
-                  },
-                ].map((achievement, index) => (
-                  <div 
-                    key={index} 
-                    className="bg-white rounded-lg shadow-lg border border-gray-100 overflow-hidden animate-fade-up hover:-translate-y-2 transition-transform duration-300"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <div className="p-6">
-                      <div className="flex justify-between items-center mb-4">
-                        <h3 className="text-xl font-semibold">{achievement.title}</h3>
-                        <div className="bg-apt-blue/10 text-apt-blue px-3 py-1 rounded-full text-sm font-medium">
-                          {achievement.year}
-                        </div>
-                      </div>
-                      <div className="flex items-center mb-4">
-                        <Sparkles className="w-5 h-5 text-apt-blue mr-2" />
-                        <span className="text-apt-blue font-medium">Achievement</span>
-                      </div>
-                      <p className="text-apt-text">{achievement.description}</p>
-                    </div>
-                  </div>
-                ))}
               </div>
             </div>
           </section>
