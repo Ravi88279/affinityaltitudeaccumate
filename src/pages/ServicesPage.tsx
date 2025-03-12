@@ -1,5 +1,5 @@
 
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Link } from 'react-router-dom';
@@ -7,40 +7,59 @@ import { serviceData } from '@/data/serviceData';
 import { 
   BarChart3, Building2, 
   DollarSign, Landmark, 
-  ShieldCheck, TrendingUp
+  ShieldCheck, TrendingUp,
+  ArrowRight
 } from 'lucide-react';
+import { useEffect } from 'react';
 
 const ServicesPage = () => {
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const specializedServices = [
     {
+      id: 'financial-analysis',
       title: 'Financial Analysis',
       description: 'In-depth analysis of financial data to identify trends, opportunities, and areas for improvement in your business operations.',
-      icon: <BarChart3 className="w-full h-full" />
+      icon: <BarChart3 className="w-full h-full" />,
+      link: '/specialized/financial-analysis'
     },
     {
+      id: 'business-structure',
       title: 'Business Structure Setup',
       description: 'Guidance on choosing and establishing the optimal business structure for your needs, including company formation, partnerships, and trusts.',
-      icon: <Building2 className="w-full h-full" />
+      icon: <Building2 className="w-full h-full" />,
+      link: '/specialized/business-structure'
     },
     {
+      id: 'cash-flow',
       title: 'Cash Flow Management',
       description: 'Strategies and tools to monitor, analyze, and improve cash flow, ensuring your business maintains adequate liquidity for operations and growth.',
-      icon: <DollarSign className="w-full h-full" />
+      icon: <DollarSign className="w-full h-full" />,
+      link: '/specialized/cash-flow'
     },
     {
+      id: 'smsf',
       title: 'SMSF Accounting',
       description: 'Specialized accounting and compliance services for Self-Managed Super Funds, helping you navigate complex regulatory requirements.',
-      icon: <Landmark className="w-full h-full" />
+      icon: <Landmark className="w-full h-full" />,
+      link: '/specialized/smsf'
     },
     {
+      id: 'audit',
       title: 'Audit Protection',
       description: 'Proactive measures to ensure your financial records are audit-ready, with support and representation in case of regulatory audits.',
-      icon: <ShieldCheck className="w-full h-full" />
+      icon: <ShieldCheck className="w-full h-full" />,
+      link: '/specialized/audit'
     },
     {
+      id: 'budgeting',
       title: 'Budgeting & Forecasting',
       description: 'Development of realistic budgets and financial forecasts to guide business planning, resource allocation, and performance evaluation.',
-      icon: <TrendingUp className="w-full h-full" />
+      icon: <TrendingUp className="w-full h-full" />,
+      link: '/specialized/budgeting'
     }
   ];
 
@@ -85,14 +104,18 @@ const ServicesPage = () => {
                 {serviceData.map((service, index) => (
                   <div key={index} className="animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
                     <Link to={`/services/${service.id}`} className="block h-full">
-                      <div className="bg-white rounded-lg p-6 shadow-sm card-hover border border-gray-100 h-full">
-                        <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                      <div className="bg-white rounded-lg p-6 shadow-sm card-hover border border-gray-100 h-full group">
+                        <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-apt-blue/20 transition-colors duration-300">
                           <div className="text-apt-blue w-8 h-8">
                             {service.icon}
                           </div>
                         </div>
-                        <h3 className="text-xl font-medium mb-3">{service.title}</h3>
+                        <h3 className="text-xl font-medium mb-3 group-hover:text-apt-blue transition-colors duration-300">{service.title}</h3>
                         <p className="text-apt-text">{service.description}</p>
+                        <div className="mt-4 text-apt-blue flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className="font-medium">View details</span>
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                        </div>
                       </div>
                     </Link>
                   </div>
@@ -193,15 +216,21 @@ const ServicesPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {specializedServices.map((service, index) => (
                   <div key={index} className="animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                    <div className="bg-white rounded-lg p-6 shadow-sm card-hover border border-gray-100 h-full">
-                      <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                        <div className="text-apt-blue w-8 h-8">
-                          {service.icon}
+                    <Link to={service.link} className="block h-full">
+                      <div className="bg-white rounded-lg p-6 shadow-sm card-hover border border-gray-100 h-full group">
+                        <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-apt-blue/20 transition-colors duration-300">
+                          <div className="text-apt-blue w-8 h-8">
+                            {service.icon}
+                          </div>
+                        </div>
+                        <h3 className="text-xl font-medium mb-3 group-hover:text-apt-blue transition-colors duration-300">{service.title}</h3>
+                        <p className="text-apt-text">{service.description}</p>
+                        <div className="mt-4 text-apt-blue flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className="font-medium">View details</span>
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                         </div>
                       </div>
-                      <h3 className="text-xl font-medium mb-3">{service.title}</h3>
-                      <p className="text-apt-text">{service.description}</p>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -211,8 +240,9 @@ const ServicesPage = () => {
                 <p className="text-lg max-w-2xl mx-auto mb-8">
                   Contact us today to discuss how our services can be tailored to meet the unique needs of your business.
                 </p>
-                <Link to="/contact" className="btn-primary inline-flex items-center">
+                <Link to="/contact" className="btn-primary inline-flex items-center group">
                   Contact Us Now
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
               </div>
             </div>
