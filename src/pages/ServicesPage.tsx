@@ -11,6 +11,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { useEffect } from 'react';
+import Faq from '@/components/ui/Faq';
 
 const ServicesPage = () => {
   // Scroll to top on page load
@@ -60,6 +61,29 @@ const ServicesPage = () => {
       description: 'Development of realistic budgets and financial forecasts to guide business planning, resource allocation, and performance evaluation.',
       icon: <TrendingUp className="w-full h-full" />,
       link: '/specialized/budgeting'
+    }
+  ];
+
+  const faqItems = [
+    {
+      question: "As a new firm, how experienced is your team?",
+      answer: "While Affinity Altitude Accumate is a new firm, our team brings substantial industry experience. Our professionals have worked with various businesses across Australia, providing expert financial services before joining our team. We combine this proven expertise with fresh perspectives and innovative approaches."
+    },
+    {
+      question: "What industries do you specialize in?",
+      answer: "We work with businesses across multiple sectors, with particular expertise in retail, professional services, technology, healthcare, and construction. Our diverse experience allows us to understand industry-specific challenges and opportunities, providing tailored solutions regardless of your sector."
+    },
+    {
+      question: "How do you charge for your services?",
+      answer: "We offer transparent, value-based pricing with several options: fixed monthly fees for ongoing services, project-based pricing for specific engagements, and hourly rates for certain advisory services. We'll discuss your needs and provide clear pricing information before you commit."
+    },
+    {
+      question: "How often will we communicate about my finances?",
+      answer: "Communication frequency depends on your needs and the services we provide. For ongoing clients, we typically schedule monthly or quarterly reviews, with additional check-ins during busy periods or when addressing specific financial matters. We're always accessible for questions or concerns between scheduled meetings."
+    },
+    {
+      question: "What technology platforms do you use?",
+      answer: "We leverage industry-leading accounting software like Xero, MYOB, and QuickBooks, along with specialized tools for tax planning, financial reporting, and data analysis. We're adaptable to your existing systems or can recommend solutions that best fit your business needs."
     }
   ];
 
@@ -244,6 +268,25 @@ const ServicesPage = () => {
                   Contact Us Now
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
+              </div>
+            </div>
+          </section>
+          
+          {/* FAQ Section */}
+          <section className="py-20 bg-white">
+            <div className="container-tight">
+              <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
+                <div className="text-apt-blue font-medium mb-3">FAQ</div>
+                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-6">
+                  Frequently Asked Questions
+                </h2>
+                <p className="text-lg opacity-80">
+                  Find answers to common questions about our services and approach.
+                </p>
+              </div>
+              
+              <div className="max-w-3xl mx-auto">
+                <Faq items={faqItems} />
               </div>
             </div>
           </section>

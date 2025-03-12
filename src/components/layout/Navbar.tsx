@@ -52,8 +52,15 @@ const Navbar = () => {
             className="relative z-20 font-bold text-xl sm:text-2xl text-apt-darkgray flex items-center hover:scale-105 transition-transform duration-300"
             aria-label="Affinity Altitude Accumate Logo"
           >
-            <span className="text-apt-blue">Affinity Altitude</span>
-            <span className="hidden sm:inline">&nbsp;Accumate</span>
+            <div className="flex items-center">
+              <div className="w-10 h-10 mr-2 rounded-full bg-apt-blue flex items-center justify-center">
+                <span className="text-white font-bold text-lg">AAA</span>
+              </div>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center">
+                <span className="text-apt-blue">Affinity Altitude</span>
+                <span className="hidden sm:inline">&nbsp;Accumate</span>
+              </div>
+            </div>
           </Link>
           
           {/* Desktop Menu */}

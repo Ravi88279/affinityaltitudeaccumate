@@ -2,213 +2,199 @@
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import { Building2, CheckCircle, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Building2, ChevronLeft, ArrowRight, CheckCircle } from 'lucide-react';
+import { useEffect } from 'react';
+import MapLink from '@/components/ui/MapLink';
 
-const BusinessStructurePage = () => {
+const BusinessStructure = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const benefits = [
+    {
+      title: "Tax Efficiency",
+      description: "Optimize your tax position with a business structure designed to minimize your tax obligations while remaining fully compliant."
+    },
+    {
+      title: "Asset Protection",
+      description: "Protect your personal and business assets with appropriate legal structures that limit liability exposure."
+    },
+    {
+      title: "Growth Facilitation",
+      description: "Establish a structure that can accommodate future growth, including bringing on new partners or expanding into new markets."
+    },
+    {
+      title: "Simplified Compliance",
+      description: "Navigate regulatory requirements more easily with a well-designed business structure tailored to your specific situation."
+    }
+  ];
+
+  const structures = [
+    {
+      title: "Sole Trader",
+      description: "Simple structure with minimal setup costs and requirements, but no separation between business and personal assets.",
+      suitable: "Small businesses with low risk profiles and individual entrepreneurs just starting out."
+    },
+    {
+      title: "Partnership",
+      description: "Shared ownership and responsibility between two or more parties, governed by a partnership agreement.",
+      suitable: "Professional service firms, family businesses, and ventures requiring complementary skill sets."
+    },
+    {
+      title: "Company",
+      description: "Separate legal entity with limited liability for shareholders, more complex regulatory requirements.",
+      suitable: "Businesses with multiple owners, higher risk profiles, or significant growth plans."
+    },
+    {
+      title: "Trust",
+      description: "Separate entity that holds assets for the benefit of others, offering tax advantages and asset protection.",
+      suitable: "Family businesses, investment activities, and estate planning purposes."
+    }
+  ];
+
   return (
     <>
       <Helmet>
         <title>Business Structure Setup - Affinity Altitude Accumate</title>
-        <meta name="description" content="Expert guidance on choosing and establishing the optimal business structure for your Australian business needs." />
+        <meta name="description" content="Expert guidance on choosing and establishing the optimal business structure for your Australian business, including company formation, partnerships, and trusts." />
       </Helmet>
       
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow pt-20">
           {/* Hero Section */}
-          <section className="bg-apt-blue text-white py-20 relative overflow-hidden">
-            <div className="absolute inset-0 bg-apt-blue/30 mix-blend-overlay" />
+          <section className="bg-apt-blue text-white py-16 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-apt-blue to-apt-blue/80 mix-blend-overlay" />
             <div className="container-tight relative z-10">
-              <div className="max-w-3xl mx-auto text-center animate-fade-up">
-                <div className="bg-white/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Building2 className="h-10 w-10 text-white" />
+              <Link to="/services" className="inline-flex items-center text-white/90 hover:text-white mb-6 transition-colors">
+                <ChevronLeft className="h-5 w-5 mr-1" />
+                Back to Services
+              </Link>
+              <div className="max-w-3xl animate-fade-up">
+                <div className="flex items-center mb-4">
+                  <div className="bg-white/20 rounded-full p-4 mr-4">
+                    <Building2 className="text-white w-8 h-8" />
+                  </div>
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">Business Structure Setup</h1>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Business Structure Setup</h1>
-                <p className="text-xl text-white/90 leading-relaxed">
-                  Building the right foundation for your business success in Australia
+                <p className="text-xl text-white/90 leading-relaxed mt-4">
+                  Guidance on choosing and establishing the optimal business structure for your needs, including company formation, partnerships, and trusts.
                 </p>
               </div>
             </div>
           </section>
           
-          {/* Overview Section */}
-          <section className="py-20 bg-white">
+          {/* Main Content */}
+          <section className="py-16 bg-white">
             <div className="container-tight">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div className="space-y-6 animate-fade-up">
-                  <h2 className="heading-underline text-3xl md:text-4xl font-semibold mb-6">
-                    Establishing the Right Business Structure
-                  </h2>
-                  <p className="text-lg">
-                    At Affinity Altitude Accumate, we understand that choosing the right business structure is one of the most crucial decisions you'll make. The structure you select affects everything from your tax obligations and legal liability to your fundraising ability and day-to-day operations.
-                  </p>
-                  <p>
-                    As a new firm with fresh perspectives on the Australian business landscape, we provide comprehensive guidance to help you select and establish the most advantageous structure for your unique business needs and future goals.
-                  </p>
-                  
-                  <div className="mt-8 space-y-5">
-                    <h3 className="text-2xl font-medium">Why Business Structure Matters:</h3>
-                    <ul className="space-y-4">
-                      <li className="flex items-start">
-                        <CheckCircle className="text-apt-blue shrink-0 mr-3 h-6 w-6 mt-0.5" />
-                        <span>Determines your tax obligations and potential deductions</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircle className="text-apt-blue shrink-0 mr-3 h-6 w-6 mt-0.5" />
-                        <span>Establishes your level of personal liability protection</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircle className="text-apt-blue shrink-0 mr-3 h-6 w-6 mt-0.5" />
-                        <span>Affects your ability to raise capital and attract investors</span>
-                      </li>
-                      <li className="flex items-start">
-                        <CheckCircle className="text-apt-blue shrink-0 mr-3 h-6 w-6 mt-0.5" />
-                        <span>Influences administrative requirements and regulatory obligations</span>
-                      </li>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div className="lg:col-span-2 space-y-8">
+                  <div className="prose max-w-none">
+                    <h2 className="text-2xl font-semibold mb-4 heading-underline">Overview</h2>
+                    <p className="text-lg">
+                      Choosing the right business structure is one of the most important decisions you'll make when establishing or growing your business in Australia. The structure you select will impact your tax obligations, personal liability, administrative requirements, and ability to raise capital.
+                    </p>
+                    <p>
+                      At Affinity Altitude Accumate, we provide expert guidance on selecting and implementing the optimal business structure for your specific circumstances. As a new firm with fresh perspectives, we combine innovative approaches with solid understanding of Australian business regulations to ensure your business is set up for success.
+                    </p>
+                    
+                    <h2 className="text-2xl font-semibold mt-12 mb-4 heading-underline">Common Business Structures in Australia</h2>
+                    <div className="space-y-6 mt-6">
+                      {structures.map((structure, index) => (
+                        <div key={index} className="bg-apt-gray/50 p-6 rounded-lg">
+                          <h3 className="text-xl font-semibold mb-2">{structure.title}</h3>
+                          <p className="mb-3">{structure.description}</p>
+                          <p className="text-sm font-medium">
+                            <span className="text-apt-blue">Best suited for:</span> {structure.suitable}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <h2 className="text-2xl font-semibold mt-12 mb-4 heading-underline">Our Business Structure Services</h2>
+                    <p>
+                      Our comprehensive business structure services include:
+                    </p>
+                    <ul className="list-disc pl-6 space-y-2">
+                      <li><strong>Structure Assessment:</strong> Evaluation of your business goals, risk profile, and financial situation to recommend the optimal structure.</li>
+                      <li><strong>Company Formation:</strong> Complete setup of proprietary limited companies, including ASIC registration and compliance requirements.</li>
+                      <li><strong>Partnership Agreements:</strong> Development of comprehensive agreements that clearly define roles, responsibilities, and profit-sharing arrangements.</li>
+                      <li><strong>Trust Establishment:</strong> Setup of various trust structures, including family trusts, unit trusts, and discretionary trusts.</li>
+                      <li><strong>ABN & Tax Registrations:</strong> Management of all necessary registrations with the ATO and other regulatory bodies.</li>
+                      <li><strong>Structure Transition:</strong> Guidance on transitioning from one business structure to another as your business evolves.</li>
+                    </ul>
+                    
+                    <h2 className="text-2xl font-semibold mt-12 mb-4 heading-underline">Benefits for Your Business</h2>
+                    <ul className="space-y-4 mt-6">
+                      {benefits.map((benefit, index) => (
+                        <li key={index} className="flex items-start">
+                          <CheckCircle className="text-apt-blue shrink-0 mr-3 h-5 w-5 mt-0.5" />
+                          <div>
+                            <h3 className="font-medium text-lg">{benefit.title}</h3>
+                            <p>{benefit.description}</p>
+                          </div>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
                 
-                <div className="relative animate-fade-in">
-                  <div className="absolute inset-0 bg-gradient-to-r from-apt-blue/10 to-apt-lightblue/5 rounded-lg transform -rotate-3"></div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                    alt="Modern business buildings representing different business structures" 
-                    className="rounded-lg shadow-lg img-zoom relative z-10"
-                  />
+                {/* Sidebar */}
+                <div className="lg:col-span-1">
+                  <div className="bg-apt-gray rounded-lg p-6 shadow-sm sticky top-24 space-y-6">
+                    <div>
+                      <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
+                      <p className="mb-4">Ready to establish the optimal structure for your business? Contact us today for expert guidance.</p>
+                      <Link to="/contact" className="btn-primary w-full text-center">Contact Us</Link>
+                    </div>
+                    
+                    <div className="pt-6 border-t border-gray-200">
+                      <h3 className="text-xl font-semibold mb-4">Our Location</h3>
+                      <MapLink address="123 Financial Street, Sydney, NSW 2000, Australia" className="mb-3" />
+                      <p className="text-sm text-apt-text/80 mt-2">Click the address to view on Google Maps</p>
+                    </div>
+                    
+                    <div className="pt-6 border-t border-gray-200">
+                      <h3 className="text-xl font-semibold mb-4">Related Services</h3>
+                      <ul className="space-y-2">
+                        <li>
+                          <Link to="/services/tax-planning" className="flex items-center hover:text-apt-blue transition-colors">
+                            <ArrowRight className="h-4 w-4 mr-2 text-apt-blue" />
+                            Tax Planning
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/services/business-advisory" className="flex items-center hover:text-apt-blue transition-colors">
+                            <ArrowRight className="h-4 w-4 mr-2 text-apt-blue" />
+                            Business Advisory
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/specialized/audit" className="flex items-center hover:text-apt-blue transition-colors">
+                            <ArrowRight className="h-4 w-4 mr-2 text-apt-blue" />
+                            Audit Protection
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
           
-          {/* Business Structures Section */}
-          <section className="py-20 bg-apt-gray">
+          {/* CTA Section */}
+          <section className="py-12 bg-apt-gray">
             <div className="container-tight">
-              <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
-                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-6">
-                  Business Structure Options in Australia
-                </h2>
-                <p className="text-lg opacity-80">
-                  We help you navigate these common business structures, evaluating their advantages and disadvantages for your specific situation.
+              <div className="bg-apt-blue rounded-lg p-8 text-white text-center">
+                <h2 className="text-2xl md:text-3xl font-semibold mb-4">Ready to Structure Your Business for Success?</h2>
+                <p className="text-lg text-white/90 max-w-2xl mx-auto mb-6">
+                  Contact us today to discuss how we can help you establish the optimal business structure for your Australian business.
                 </p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {[
-                  {
-                    title: "Sole Trader",
-                    description: "The simplest structure where you operate the business as an individual. You have full control but also full personal liability for all business debts and obligations.",
-                    pros: ["Simple and inexpensive to establish", "Complete control over the business", "Minimal regulatory requirements", "Lower setup and administration costs"],
-                    cons: ["Unlimited personal liability", "Limited access to capital", "Tax may be higher as business grows", "Difficult to sell or transfer"]
-                  },
-                  {
-                    title: "Partnership",
-                    description: "An association of two or more people who run a business together. Partners share control, profits, and liability for the business.",
-                    pros: ["Relatively easy to establish", "Shared financial commitment", "Combined knowledge and skills", "Potential tax advantages"],
-                    cons: ["Joint liability for debts", "Potential disputes between partners", "Complicated dissolution process", "Tax obligations for each partner"]
-                  },
-                  {
-                    title: "Company",
-                    description: "A separate legal entity from its shareholders, providing limited liability protection and a more formal business structure.",
-                    pros: ["Limited liability protection", "Easier to raise capital", "Potential tax advantages", "Perpetual existence independent of owners"],
-                    cons: ["Higher setup and maintenance costs", "Complex regulatory requirements", "More extensive reporting obligations", "Less privacy due to public records"]
-                  },
-                  {
-                    title: "Trust",
-                    description: "A structure where trustees hold property or assets for the benefit of others (beneficiaries). Common in family businesses and investment activities.",
-                    pros: ["Asset protection", "Flexible distribution of income", "Potential tax planning advantages", "Estate planning benefits"],
-                    cons: ["Complex to establish and maintain", "Higher setup costs", "Trustees have strict legal obligations", "Subject to trust law and regulations"]
-                  }
-                ].map((structure, index) => (
-                  <div 
-                    key={index} 
-                    className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up" 
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <h3 className="text-xl font-semibold mb-4">{structure.title}</h3>
-                    <p className="mb-6">{structure.description}</p>
-                    
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div>
-                        <h4 className="font-medium text-apt-blue mb-2">Advantages</h4>
-                        <ul className="space-y-2">
-                          {structure.pros.map((pro, i) => (
-                            <li key={i} className="flex items-start text-sm">
-                              <CheckCircle className="text-green-500 shrink-0 mr-2 h-4 w-4 mt-0.5" />
-                              <span>{pro}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-medium text-apt-blue mb-2">Disadvantages</h4>
-                        <ul className="space-y-2">
-                          {structure.cons.map((con, i) => (
-                            <li key={i} className="flex items-start text-sm">
-                              <span className="text-red-500 shrink-0 mr-2 h-4 w-4 mt-0.5 font-bold">•</span>
-                              <span>{con}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-          
-          {/* Services Process Section */}
-          <section className="py-20 bg-white">
-            <div className="container-tight">
-              <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
-                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-6">
-                  Our Business Structure Setup Services
-                </h2>
-                <p className="text-lg opacity-80">
-                  We provide end-to-end support to help you establish the optimal business structure for your unique needs.
-                </p>
-              </div>
-              
-              <div className="space-y-8">
-                {[
-                  {
-                    title: "Structure Assessment & Recommendation",
-                    description: "We evaluate your business goals, growth plans, financial position, and risk profile to recommend the most appropriate structure for your specific situation."
-                  },
-                  {
-                    title: "Entity Formation & Registration",
-                    description: "We handle all the paperwork and processes required to formally establish your chosen business structure, including ABN, TFN, GST, and ASIC registrations."
-                  },
-                  {
-                    title: "Governance & Compliance Setup",
-                    description: "We develop the necessary legal documents and governance frameworks to ensure your business operates in compliance with all relevant regulations."
-                  },
-                  {
-                    title: "Tax Planning & Strategy",
-                    description: "We create tax-efficient strategies aligned with your business structure to minimize your tax burden while maintaining full compliance with ATO requirements."
-                  },
-                  {
-                    title: "Structure Review & Optimization",
-                    description: "As your business evolves, we continuously review your structure to ensure it remains optimal for your changing needs and goals."
-                  }
-                ].map((service, index) => (
-                  <div 
-                    key={index} 
-                    className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100 animate-fade-up" 
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-                    <p>{service.description}</p>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="text-center mt-16">
-                <Link to="/contact" className="btn-primary inline-flex items-center group">
-                  Contact Us for Expert Structure Advice
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <Link to="/contact" className="bg-white text-apt-blue hover:bg-white/90 px-6 py-3 rounded-md font-medium transition-all inline-flex items-center">
+                  Request a Consultation
                 </Link>
               </div>
             </div>
@@ -220,4 +206,4 @@ const BusinessStructurePage = () => {
   );
 };
 
-export default BusinessStructurePage;
+export default BusinessStructure;
