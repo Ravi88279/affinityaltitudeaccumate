@@ -22,7 +22,7 @@ const About = () => {
     {
       id: 'client-focus',
       title: 'Client Focus',
-      description: 'We prioritize understanding our clients' needs and delivering personalized solutions that drive their success.',
+      description: 'We prioritize understanding our clients\' needs and delivering personalized solutions that drive their success.',
       icon: 'users'
     },
     {
