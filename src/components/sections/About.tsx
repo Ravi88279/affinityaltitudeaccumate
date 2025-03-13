@@ -1,5 +1,5 @@
 
-import { CheckCircle } from 'lucide-react';
+import { Award, BadgeCheck, Check, CheckCircle, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const About = () => {
@@ -10,6 +10,33 @@ const About = () => {
     'Timely and accurate financial reporting',
     'Strong focus on client communication',
     'Up-to-date with latest tax regulations'
+  ];
+
+  const principles = [
+    {
+      id: 'integrity',
+      title: 'Integrity',
+      description: 'We adhere to the highest ethical standards and are committed to honesty and transparency in all our dealings.',
+      icon: <Check className="h-5 w-5 text-apt-blue" />
+    },
+    {
+      id: 'client-focus',
+      title: 'Client Focus',
+      description: 'We prioritize understanding our clients\' needs and delivering personalized solutions that drive their success.',
+      icon: <Users className="h-5 w-5 text-apt-blue" />
+    },
+    {
+      id: 'excellence',
+      title: 'Excellence',
+      description: 'We strive for excellence in all aspects of our work, continuously improving our skills and processes.',
+      icon: <Award className="h-5 w-5 text-apt-blue" />
+    },
+    {
+      id: 'reliability',
+      title: 'Reliability',
+      description: 'Our clients can count on us to deliver accurate, timely services they can depend on for critical decisions.',
+      icon: <BadgeCheck className="h-5 w-5 text-apt-blue" />
+    }
   ];
 
   return (
@@ -46,7 +73,10 @@ const About = () => {
             <div className="text-apt-blue font-medium">About Us</div>
             <h2 className="heading-underline">Professional Financial Services You Can Trust</h2>
             <p className="text-lg">
-              At Affinity Altitude Accumate, we're a new firm bringing fresh perspectives to professional accounting and bookkeeping services. While new to the market, our team combines experience with innovation to serve businesses of all sizes.
+              At Affinity Altitude Accumate, we're a new firm bringing fresh perspectives to professional accounting and bookkeeping services in Australia. Our approach combines innovative thinking with comprehensive knowledge of Australian tax laws and business regulations.
+            </p>
+            <p>
+              We understand that every Australian business is unique, which is why we offer tailored financial solutions that address your specific challenges and opportunities. Our team is committed to providing personalized service that helps your business thrive in the competitive Australian market.
             </p>
             
             <ul className="space-y-3 mt-8">
@@ -57,6 +87,27 @@ const About = () => {
                 </li>
               ))}
             </ul>
+            
+            <div className="pt-4 font-medium text-apt-blue">Our Core Values</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {principles.map((principle) => (
+                <Link 
+                  key={principle.id}
+                  to={`/values/${principle.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 group flex items-start"
+                >
+                  <div className="bg-apt-blue/10 rounded-full w-10 h-10 flex items-center justify-center mr-3 shrink-0 group-hover:bg-apt-blue/20 transition-colors duration-300">
+                    {principle.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-lg group-hover:text-apt-blue transition-colors duration-300">{principle.title}</h3>
+                    <p className="text-apt-text text-sm mt-1">{principle.description}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
             
             <div className="pt-4">
               <Link to="/about" className="btn-ghost">

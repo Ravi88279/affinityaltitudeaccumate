@@ -3,20 +3,79 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Link } from 'react-router-dom';
-import { Check, Users, Award, BadgeCheck, ArrowRight } from 'lucide-react';
+import { Check, Users, Award, BadgeCheck, ArrowRight, MapPin } from 'lucide-react';
 import { useEffect } from 'react';
 
 const AboutPage = () => {
   // Scroll to top on page load
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }, []);
+
+  // Core values array
+  const coreValues = [
+    {
+      id: 'integrity',
+      title: 'Integrity',
+      description: 'We adhere to the highest ethical standards and are committed to honesty and transparency in all our dealings.',
+      icon: <Check className="h-8 w-8 text-apt-blue" />,
+      details: 'Our commitment to integrity means that we always act in your best interest, providing honest advice even when it may not be what you want to hear. We believe that long-term relationships are built on trust, and we earn that trust by maintaining the highest ethical standards in everything we do.'
+    },
+    {
+      id: 'client-focus',
+      title: 'Client Focus',
+      description: 'We prioritize understanding our clients\' needs and delivering personalized solutions that drive their success.',
+      icon: <Users className="h-8 w-8 text-apt-blue" />,
+      details: 'At Affinity Altitude Accumate, we take the time to understand your unique business challenges, goals, and vision. This deep understanding allows us to provide tailored solutions that address your specific needs rather than one-size-fits-all approaches.'
+    },
+    {
+      id: 'excellence',
+      title: 'Excellence',
+      description: 'We strive for excellence in all aspects of our work, continuously improving our skills and processes.',
+      icon: <Award className="h-8 w-8 text-apt-blue" />,
+      details: 'Our pursuit of excellence drives us to continuously enhance our expertise, refine our processes, and adopt innovative approaches. We're committed to delivering work of the highest quality that exceeds expectations and helps your business thrive.'
+    },
+    {
+      id: 'reliability',
+      title: 'Reliability',
+      description: 'Our clients can count on us to deliver accurate, timely services they can depend on for critical decisions.',
+      icon: <BadgeCheck className="h-8 w-8 text-apt-blue" />,
+      details: 'We understand that reliable financial information is essential for making sound business decisions. That's why we're committed to delivering accurate, timely services that you can depend on. When we make a commitment, we stand by it.'
+    }
+  ];
+
+  // FAQ items with toggle functionality
+  const faqItems = [
+    {
+      question: "As a new firm, how experienced is your team?",
+      answer: "While Affinity Altitude Accumate is a new firm, our team brings substantial industry experience. Our professionals have worked with various businesses across Australia, providing expert financial services before joining our team. We combine this proven expertise with fresh perspectives and innovative approaches."
+    },
+    {
+      question: "What makes Affinity Altitude Accumate different?",
+      answer: "As a new firm, we bring a fresh approach to financial services. We combine innovative thinking with solid industry knowledge, prioritize personalized client relationships, leverage cutting-edge technology, and offer transparent pricing structures. We're small enough to provide personalized attention but experienced enough to handle complex financial matters."
+    },
+    {
+      question: "What industries do you specialize in?",
+      answer: "We work with businesses across multiple sectors in Australia, with particular expertise in retail, professional services, technology, healthcare, and construction. Our diverse experience allows us to understand industry-specific challenges and opportunities, providing tailored solutions regardless of your sector."
+    },
+    {
+      question: "How do you stay current with Australian tax regulations?",
+      answer: "We maintain a rigorous professional development program that ensures our team stays current with all Australian tax regulations and accounting standards. We invest in ongoing education, subscribe to professional updates, participate in industry forums, and collaborate with legal and regulatory experts to maintain our knowledge edge."
+    },
+    {
+      question: "Can you support businesses of different sizes?",
+      answer: "Absolutely. We're equipped to support Australian businesses at all stages of growth, from startups and small businesses to established mid-market companies. Our scalable service model allows us to adapt our offerings to match your business size, complexity, and specific needs."
+    }
+  ];
 
   return (
     <>
       <Helmet>
         <title>About Us - Affinity Altitude Accumate</title>
-        <meta name="description" content="Learn about Affinity Altitude Accumate, our mission, and our commitment to providing quality financial services." />
+        <meta name="description" content="Learn about Affinity Altitude Accumate, our mission, and our commitment to providing quality financial services in Australia." />
       </Helmet>
       
       <div className="flex flex-col min-h-screen">
@@ -60,7 +119,7 @@ const AboutPage = () => {
                 <div className="space-y-6 animate-fade-up">
                   <div className="text-apt-blue font-medium">Our Story</div>
                   <h2 className="heading-underline text-3xl md:text-4xl font-semibold mb-6">
-                    A New Vision for Financial Services
+                    A New Vision for Financial Services in Australia
                   </h2>
                   <p className="text-lg">
                     Affinity Altitude Accumate was founded with a clear mission: to transform how Australian 
@@ -148,115 +207,29 @@ const AboutPage = () => {
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <Link to="/values/integrity" target="_blank" className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300 group" style={{ animationDelay: '0.1s' }}>
-                  <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-apt-blue/20 transition-colors duration-300">
-                    <Check className="h-8 w-8 text-apt-blue" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-apt-blue transition-colors duration-300">Integrity</h3>
-                  <p>
-                    We adhere to the highest ethical standards and are committed to honesty and transparency in all our dealings.
-                  </p>
-                  <div className="mt-4 text-apt-blue flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="font-medium">Learn more</span>
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-                </Link>
-                
-                <Link to="/values/client-focus" target="_blank" className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300 group" style={{ animationDelay: '0.2s' }}>
-                  <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-apt-blue/20 transition-colors duration-300">
-                    <Users className="h-8 w-8 text-apt-blue" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-apt-blue transition-colors duration-300">Client Focus</h3>
-                  <p>
-                    We prioritize understanding our clients' needs and delivering personalized solutions that drive their success.
-                  </p>
-                  <div className="mt-4 text-apt-blue flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="font-medium">Learn more</span>
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-                </Link>
-                
-                <Link to="/values/excellence" target="_blank" className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300 group" style={{ animationDelay: '0.3s' }}>
-                  <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-apt-blue/20 transition-colors duration-300">
-                    <Award className="h-8 w-8 text-apt-blue" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-apt-blue transition-colors duration-300">Excellence</h3>
-                  <p>
-                    We strive for excellence in all aspects of our work, continuously improving our skills and processes.
-                  </p>
-                  <div className="mt-4 text-apt-blue flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="font-medium">Learn more</span>
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-                </Link>
-                
-                <Link to="/values/reliability" target="_blank" className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300 group" style={{ animationDelay: '0.4s' }}>
-                  <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-apt-blue/20 transition-colors duration-300">
-                    <BadgeCheck className="h-8 w-8 text-apt-blue" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-apt-blue transition-colors duration-300">Reliability</h3>
-                  <p>
-                    Our clients can count on us to deliver accurate, timely services they can depend on for critical decisions.
-                  </p>
-                  <div className="mt-4 text-apt-blue flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="font-medium">Learn more</span>
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
-                </Link>
-              </div>
-            </div>
-          </section>
-          
-          {/* Our Team */}
-          <section className="py-20 bg-apt-gray">
-            <div className="container-tight">
-              <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
-                <div className="text-apt-blue font-medium mb-3">Our Team</div>
-                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-6">
-                  Meet Our Professionals
-                </h2>
-                <p className="text-lg opacity-80">
-                  Our talented team brings together diverse expertise and shared values to deliver 
-                  exceptional service to our clients.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {[
-                  {
-                    name: "Sarah Johnson",
-                    title: "Founder & Director",
-                    bio: "Sarah brings over 15 years of accounting experience, specializing in business advisory and strategic financial planning for Australian businesses.",
-                    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                  },
-                  {
-                    name: "Michael Chen",
-                    title: "Senior Accountant",
-                    bio: "Michael specializes in taxation and compliance, helping businesses navigate complex regulatory requirements while optimizing their tax position.",
-                    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                  },
-                  {
-                    name: "Amelia Patel",
-                    title: "Financial Analyst",
-                    bio: "Amelia excels at transforming financial data into actionable business insights, with expertise in forecasting and strategic planning.",
-                    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                  }
-                ].map((member, index) => (
-                  <div 
-                    key={index} 
-                    className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 animate-fade-up"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <img 
-                      src={member.image} 
-                      alt={member.name} 
-                      className="w-full h-64 object-cover object-center hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                      <p className="text-apt-blue font-medium mb-4">{member.title}</p>
-                      <p>{member.bio}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {coreValues.map((value, index) => (
+                  <div key={value.id} className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 animate-fade-up hover:-translate-y-2 border border-gray-100" style={{ animationDelay: `${index * 0.1}s` }}>
+                    <div className="flex items-start mb-4">
+                      <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mr-4 shrink-0">
+                        {value.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
+                        <p className="text-apt-text">{value.description}</p>
+                      </div>
+                    </div>
+                    <div className="pt-4 border-t border-gray-100 mt-4">
+                      <p className="text-apt-text">{value.details}</p>
+                      <Link 
+                        to={`/values/${value.id}`}
+                        target="_blank"
+                        rel="noopener noreferrer" 
+                        className="mt-4 text-apt-blue hover:underline inline-flex items-center"
+                      >
+                        <span>Learn more about this value</span>
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
                     </div>
                   </div>
                 ))}
@@ -265,7 +238,7 @@ const AboutPage = () => {
           </section>
           
           {/* Why Choose Us */}
-          <section className="py-20 bg-white">
+          <section className="py-20 bg-apt-gray">
             <div className="container-tight">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="relative order-2 lg:order-1 animate-fade-in">
@@ -352,6 +325,73 @@ const AboutPage = () => {
             </div>
           </section>
           
+          {/* Visit Us / Office Location */}
+          <section className="py-20 bg-white">
+            <div className="container-tight">
+              <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
+                <div className="text-apt-blue font-medium mb-3">Our Location</div>
+                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-6">
+                  Visit Our Office
+                </h2>
+                <p className="text-lg opacity-80">
+                  We're conveniently located in Sydney's financial district. 
+                  Stop by to discuss your business needs in person.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <div className="lg:col-span-2 bg-apt-gray p-8 rounded-lg animate-fade-up">
+                  <div className="flex items-start">
+                    <MapPin className="text-apt-blue shrink-0 mr-3 h-6 w-6 mt-1" />
+                    <div>
+                      <h3 className="font-medium text-xl mb-4">Our Address:</h3>
+                      <p className="text-lg mb-1">123 Financial District</p>
+                      <p className="text-lg mb-1">Sydney, NSW 2000</p>
+                      <p className="text-lg mb-6">Australia</p>
+                      
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="font-medium mb-1">Business Hours:</h4>
+                          <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
+                          <p>Saturday - Sunday: Closed</p>
+                        </div>
+                        
+                        <div>
+                          <h4 className="font-medium mb-1">Contact:</h4>
+                          <p>Phone: (02) 1234 5678</p>
+                          <p>Email: info@affinityaltitude.com.au</p>
+                        </div>
+                      </div>
+                      
+                      <a 
+                        href="https://maps.google.com/?q=Sydney+NSW+2000+Australia" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-ghost mt-6 py-2 inline-flex items-center"
+                      >
+                        <span>View on Google Maps</span>
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="lg:col-span-3 rounded-lg overflow-hidden shadow-lg animate-fade-in h-[400px]">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13251.016266076307!2d151.2046789!3d-33.8696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae401e8b983f%3A0x8f7588d9d4e5964c!2sSydney%20NSW%202000%2C%20Australia!5e0!3m2!1sen!2sus!4v1653000000000!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="100%" 
+                    style={{ border: 0 }} 
+                    allowFullScreen 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Office Location"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </section>
+          
           {/* FAQ Section */}
           <section className="py-20 bg-apt-gray">
             <div className="container-tight">
@@ -366,43 +406,22 @@ const AboutPage = () => {
               </div>
               
               <div className="max-w-3xl mx-auto space-y-4">
-                {[
-                  {
-                    question: "As a new firm, how experienced is your team?",
-                    answer: "While Affinity Altitude Accumate is a new firm, our team brings substantial industry experience. Our professionals have worked with various businesses across Australia, providing expert financial services before joining our team. We combine this proven expertise with fresh perspectives and innovative approaches."
-                  },
-                  {
-                    question: "What industries do you specialize in?",
-                    answer: "We work with businesses across multiple sectors, with particular expertise in retail, professional services, technology, healthcare, and construction. Our diverse experience allows us to understand industry-specific challenges and opportunities, providing tailored solutions regardless of your sector."
-                  },
-                  {
-                    question: "How do you charge for your services?",
-                    answer: "We offer transparent, value-based pricing with several options: fixed monthly fees for ongoing services, project-based pricing for specific engagements, and hourly rates for certain advisory services. We'll discuss your needs and provide clear pricing information before you commit."
-                  },
-                  {
-                    question: "How often will we communicate about my finances?",
-                    answer: "Communication frequency depends on your needs and the services we provide. For ongoing clients, we typically schedule monthly or quarterly reviews, with additional check-ins during busy periods or when addressing specific financial matters. We're always accessible for questions or concerns between scheduled meetings."
-                  },
-                  {
-                    question: "What technology platforms do you use?",
-                    answer: "We leverage industry-leading accounting software like Xero, MYOB, and QuickBooks, along with specialized tools for tax planning, financial reporting, and data analysis. We're adaptable to your existing systems or can recommend solutions that best fit your business needs."
-                  }
-                ].map((faq, index) => (
+                {faqItems.map((faq, index) => (
                   <div 
                     key={index} 
-                    className="bg-white rounded-lg shadow-sm overflow-hidden animate-fade-up"
+                    className="bg-white rounded-lg shadow-sm overflow-hidden animate-fade-up border border-gray-100"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <details className="group">
                       <summary className="flex justify-between items-center p-6 cursor-pointer font-medium text-lg">
                         {faq.question}
-                        <span className="transition-transform duration-300 group-open:rotate-180">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <span className="text-apt-blue flex items-center justify-center h-6 w-6 rounded-full border border-apt-blue/30 group-open:rotate-45 transition-transform duration-300">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                           </svg>
                         </span>
                       </summary>
-                      <div className="px-6 pb-6 -mt-2">
+                      <div className="px-6 pb-6 -mt-2 text-apt-text">
                         <p>{faq.answer}</p>
                       </div>
                     </details>
@@ -431,7 +450,7 @@ const AboutPage = () => {
                   Contact Affinity Altitude Accumate today to discover how our 
                   expert financial services can help your business thrive.
                 </p>
-                <Link to="/contact" className="btn-primary bg-white text-apt-blue hover:bg-apt-lightblue hover:text-white inline-flex items-center group">
+                <Link to="/contact" className="btn-primary bg-white text-apt-blue hover:bg-white/90 inline-flex items-center group">
                   Contact Us Today
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>

@@ -8,7 +8,7 @@ import {
   BarChart3, Building2, 
   DollarSign, Landmark, 
   ShieldCheck, TrendingUp,
-  ArrowRight
+  ArrowRight, MapPin
 } from 'lucide-react';
 import { useEffect } from 'react';
 
@@ -60,6 +60,26 @@ const ServicesPage = () => {
       description: 'Development of realistic budgets and financial forecasts to guide business planning, resource allocation, and performance evaluation.',
       icon: <TrendingUp className="w-full h-full" />,
       link: '/specialized/budgeting'
+    }
+  ];
+
+  // FAQs with toggle functionality
+  const faqs = [
+    {
+      question: "As a new firm, how experienced is your team?",
+      answer: "While Affinity Altitude Accumate is a new firm, our team brings substantial industry experience. Our professionals have worked with various businesses across Australia, providing expert financial services before joining our team."
+    },
+    {
+      question: "What industries do you specialize in?",
+      answer: "We work with businesses across multiple sectors in Australia, with particular expertise in retail, professional services, technology, healthcare, and construction. Our diverse experience allows us to understand industry-specific challenges and opportunities."
+    },
+    {
+      question: "How do you charge for your services?",
+      answer: "We offer transparent, value-based pricing with several options: fixed monthly fees for ongoing services, project-based pricing for specific engagements, and hourly rates for certain advisory services. We'll discuss your needs and provide clear pricing information before you commit."
+    },
+    {
+      question: "How often will we communicate about my finances?",
+      answer: "Communication frequency depends on your needs and the services we provide. For ongoing clients, we typically schedule monthly or quarterly reviews, with additional check-ins during busy periods or when addressing specific financial matters."
     }
   ];
 
@@ -124,76 +144,52 @@ const ServicesPage = () => {
             </div>
           </section>
           
-          {/* Why Choose Us */}
-          <section className="py-20 bg-white">
+          {/* Visit Us Section with Map */}
+          <section className="py-16 bg-white">
             <div className="container-tight">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div className="relative order-2 lg:order-1 animate-fade-in">
-                  <img 
-                    src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-                    alt="Professional accounting services" 
-                    className="rounded-lg shadow-lg"
-                  />
-                </div>
-                
-                <div className="space-y-6 order-1 lg:order-2 animate-fade-up">
-                  <div className="text-apt-blue font-medium">Why Choose Us</div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6 animate-fade-up">
+                  <div className="text-apt-blue font-medium">Visit Our Office</div>
                   <h2 className="heading-underline text-3xl md:text-4xl font-semibold mb-6">
-                    The Affinity Altitude Advantage
+                    We're Here to Help
                   </h2>
                   <p className="text-lg">
-                    As a new firm in the Australian market, Affinity Altitude Accumate brings a fresh perspective to accounting and bookkeeping services, combining innovative approaches with solid industry expertise.
+                    As a new firm in the Australian market, Affinity Altitude Accumate is conveniently located in Sydney's financial district. We welcome you to visit our office to discuss your business needs in person.
                   </p>
                   
-                  <ul className="space-y-4 mt-8">
-                    <li className="flex items-start">
-                      <div className="bg-apt-blue/10 rounded-full p-1 mr-4 mt-1">
-                        <svg className="w-5 h-5 text-apt-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                      </div>
+                  <div className="mt-8 bg-apt-gray p-6 rounded-lg">
+                    <div className="flex items-start">
+                      <MapPin className="text-apt-blue shrink-0 mr-3 h-5 w-5 mt-1" />
                       <div>
-                        <h3 className="font-medium text-lg">Personalized Approach</h3>
-                        <p>We take the time to understand your unique business needs and tailor our services accordingly.</p>
+                        <h3 className="font-medium text-lg">Our Address:</h3>
+                        <p className="mb-1">123 Financial District</p>
+                        <p className="mb-1">Sydney, NSW 2000</p>
+                        <p className="mb-4">Australia</p>
+                        <a 
+                          href="https://maps.google.com/?q=Sydney+NSW+2000+Australia" 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn-ghost py-2 inline-flex items-center"
+                        >
+                          <span>View on Google Maps</span>
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </a>
                       </div>
-                    </li>
-                    
-                    <li className="flex items-start">
-                      <div className="bg-apt-blue/10 rounded-full p-1 mr-4 mt-1">
-                        <svg className="w-5 h-5 text-apt-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                      </div>
-                      <div>
-                        <h3 className="font-medium text-lg">Experienced Team</h3>
-                        <p>Our professionals bring years of industry expertise and specialized knowledge to every client engagement.</p>
-                      </div>
-                    </li>
-                    
-                    <li className="flex items-start">
-                      <div className="bg-apt-blue/10 rounded-full p-1 mr-4 mt-1">
-                        <svg className="w-5 h-5 text-apt-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                      </div>
-                      <div>
-                        <h3 className="font-medium text-lg">Timely Delivery</h3>
-                        <p>We understand the importance of meeting deadlines and consistently deliver our services on time.</p>
-                      </div>
-                    </li>
-                    
-                    <li className="flex items-start">
-                      <div className="bg-apt-blue/10 rounded-full p-1 mr-4 mt-1">
-                        <svg className="w-5 h-5 text-apt-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                      </div>
-                      <div>
-                        <h3 className="font-medium text-lg">Transparent Pricing</h3>
-                        <p>Our fee structure is clear and straightforward, with no hidden costs or unexpected charges.</p>
-                      </div>
-                    </li>
-                  </ul>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="relative animate-fade-in rounded-lg overflow-hidden shadow-lg border border-gray-200">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13251.016266076307!2d151.2046789!3d-33.8696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae401e8b983f%3A0x8f7588d9d4e5964c!2sSydney%20NSW%202000%2C%20Australia!5e0!3m2!1sen!2sus!4v1653000000000!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="450" 
+                    style={{ border: 0 }} 
+                    allowFullScreen 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Office Location"
+                  ></iframe>
                 </div>
               </div>
             </div>
@@ -231,6 +227,45 @@ const ServicesPage = () => {
                         </div>
                       </div>
                     </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+          
+          {/* FAQ Section */}
+          <section className="py-20 bg-white">
+            <div className="container-tight">
+              <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
+                <div className="text-apt-blue font-medium mb-3">FAQ</div>
+                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-6">
+                  Frequently Asked Questions
+                </h2>
+                <p className="text-lg opacity-80">
+                  Find answers to common questions about our services.
+                </p>
+              </div>
+              
+              <div className="max-w-3xl mx-auto space-y-4">
+                {faqs.map((faq, index) => (
+                  <div 
+                    key={index} 
+                    className="bg-white rounded-lg shadow-sm overflow-hidden animate-fade-up border border-gray-100"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <details className="group">
+                      <summary className="flex justify-between items-center p-6 cursor-pointer font-medium text-lg">
+                        {faq.question}
+                        <span className="text-apt-blue flex items-center justify-center h-6 w-6 rounded-full border border-apt-blue/30 group-open:rotate-45 transition-transform duration-300">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </span>
+                      </summary>
+                      <div className="px-6 pb-6 -mt-2 text-apt-text">
+                        <p>{faq.answer}</p>
+                      </div>
+                    </details>
                   </div>
                 ))}
               </div>
