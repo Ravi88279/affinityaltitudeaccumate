@@ -27,7 +27,7 @@ const AboutPage = () => {
     {
       id: 'client-focus',
       title: 'Client Focus',
-      description: 'We prioritize understanding our clients\' needs and delivering personalized solutions that drive their success.',
+      description: "We prioritize understanding our clients' needs and delivering personalized solutions that drive their success.",
       icon: <Users className="h-8 w-8 text-apt-blue" />,
       details: 'At Affinity Altitude Accumate, we take the time to understand your unique business challenges, goals, and vision. This deep understanding allows us to provide tailored solutions that address your specific needs rather than one-size-fits-all approaches.'
     },
