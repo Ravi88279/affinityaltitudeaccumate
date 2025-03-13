@@ -53,13 +53,19 @@ const Navbar = () => {
       scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-transparent")}>
       <div className="container-tight">
         <div className="flex justify-between items-center h-16">
-          {/* Logo with Animation */}
-          <Link to="/" className="relative z-20 flex items-center hover:scale-105 transition-transform duration-300" aria-label="Affinity Altitude Accumate Logo">
+          {/* Logo with Animation and Firm Name */}
+          <Link to="/" className="relative z-20 flex items-center hover:scale-105 transition-transform duration-300 gap-3" aria-label="Affinity Altitude Accumate Logo">
             <img 
               src="/lovable-uploads/93af181c-c887-427a-8bc1-794156f6ad6b.png" 
               alt="Affinity Altitude Accumate Logo" 
               className="h-12 w-auto animate-pulse-slow hover:animate-none transition-all" 
             />
+            <span className={cn(
+              "font-semibold text-lg hidden sm:block transition-colors duration-300",
+              scrolled ? "text-apt-darkgray" : "text-apt-blue"
+            )}>
+              Affinity Altitude Accumate
+            </span>
           </Link>
           
           {/* Desktop Menu */}
@@ -94,12 +100,13 @@ const Navbar = () => {
             "fixed inset-0 bg-white z-10 flex flex-col justify-center items-center transition-all duration-300 md:hidden", 
             isOpen ? "opacity-100 visible" : "opacity-0 invisible"
           )}>
-            <div className="p-4 mb-6">
+            <div className="p-4 mb-6 flex flex-col items-center">
               <img 
                 src="/lovable-uploads/93af181c-c887-427a-8bc1-794156f6ad6b.png" 
                 alt="Affinity Altitude Accumate Logo" 
-                className="h-10 w-auto" 
+                className="h-10 w-auto mb-2" 
               />
+              <span className="font-semibold text-apt-blue">Affinity Altitude Accumate</span>
             </div>
             <nav className="flex flex-col space-y-6 text-center">
               {navLinks.map(link => (

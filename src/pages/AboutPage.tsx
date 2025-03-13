@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Check, Users, Award, BadgeCheck, MapPin, Mail, Phone, ArrowUpRight } from 'lucide-react';
@@ -10,8 +10,8 @@ const AboutPage = () => {
       id: 'integrity',
       title: 'Integrity',
       icon: <Check className="h-8 w-8 text-apt-blue" />,
-      description: 'We adhere to the highest ethical standards and are committed to honesty and transparency in all our dealings.',
-      details: 'Our commitment to integrity means we always put ethical considerations at the forefront of our practice. We believe in complete transparency with our clients, providing honest assessments and recommendations even when they might not be what clients initially want to hear. This foundation of trust is essential to building meaningful, long-term relationships with our clients.'
+      description: "We adhere to the highest ethical standards and are committed to honesty and transparency in all our dealings.",
+      details: "Our commitment to integrity means we always put ethical considerations at the forefront of our practice. We believe in complete transparency with our clients, providing honest assessments and recommendations even when they might not be what clients initially want to hear. This foundation of trust is essential to building meaningful, long-term relationships with our clients."
     },
     {
       id: 'client-focus',
@@ -55,8 +55,8 @@ const AboutPage = () => {
   ];
 
   const officeLocation = {
-    address: "101 Business Avenue, Sydney NSW 2000, Australia",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=101+Business+Avenue+Sydney+NSW+2000+Australia"
+    address: "Office no. 1024, 10th floor, Sun Gravitas, near. Shyamal Cross Road, Rajmani Society, Satellite, Ahmedabad, Gujarat 380015",
+    mapUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Office no. 1024, 10th floor, Sun Gravitas, near. Shyamal Cross Road, Rajmani Society, Satellite, Ahmedabad, Gujarat 380015")}`
   };
 
   return (
@@ -255,26 +255,26 @@ const AboutPage = () => {
                 </a>
                 
                 <a 
-                  href="mailto:contact@affinityaltitudeaccumate.com.au"
+                  href="mailto:affinityaltitudeaccumate@gmail.com"
                   className="bg-white p-8 rounded-lg shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
                 >
                   <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
                     <Mail className="h-8 w-8 text-apt-blue" />
                   </div>
                   <h3 className="text-xl font-semibold mb-3">Email Us</h3>
-                  <p className="group-hover:text-apt-blue transition-colors">contact@affinityaltitudeaccumate.com.au</p>
+                  <p className="group-hover:text-apt-blue transition-colors">affinityaltitudeaccumate@gmail.com</p>
                   <div className="text-apt-blue mt-4 opacity-0 group-hover:opacity-100 transition-all">Send Email →</div>
                 </a>
                 
                 <a 
-                  href="tel:+61234567890"
+                  href="tel:+918866689174"
                   className="bg-white p-8 rounded-lg shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
                 >
                   <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
                     <Phone className="h-8 w-8 text-apt-blue" />
                   </div>
                   <h3 className="text-xl font-semibold mb-3">Call Us</h3>
-                  <p className="group-hover:text-apt-blue transition-colors">+61 2 3456 7890</p>
+                  <p className="group-hover:text-apt-blue transition-colors">+91 8866689174</p>
                   <div className="text-apt-blue mt-4 opacity-0 group-hover:opacity-100 transition-all">Call Now →</div>
                 </a>
               </div>
