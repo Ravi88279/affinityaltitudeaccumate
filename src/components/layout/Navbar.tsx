@@ -49,11 +49,20 @@ const Navbar = () => {
           {/* Logo */}
           <Link 
             to="/" 
-            className="relative z-20 font-bold text-xl sm:text-2xl text-apt-darkgray flex items-center hover:scale-105 transition-transform duration-300"
+            className="relative z-20 flex items-center hover:scale-105 transition-transform duration-300"
             aria-label="Affinity Altitude Accumate Logo"
           >
-            <span className="text-apt-blue">Affinity Altitude</span>
-            <span className="hidden sm:inline">&nbsp;Accumate</span>
+            <div className="flex items-center">
+              <img 
+                src="/logo.png" 
+                alt="Affinity Altitude Accumate Logo" 
+                className="h-10 mr-2"
+              />
+              <div className="font-bold">
+                <span className="text-apt-blue text-lg sm:text-xl">Affinity Altitude</span>
+                <span className="hidden sm:block text-apt-darkgray text-sm sm:text-lg">Accumate</span>
+              </div>
+            </div>
           </Link>
           
           {/* Desktop Menu */}

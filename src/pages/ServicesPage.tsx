@@ -13,31 +13,37 @@ import {
 const ServicesPage = () => {
   const specializedServices = [
     {
+      id: 'financial-analysis',
       title: 'Financial Analysis',
       description: 'In-depth analysis of financial data to identify trends, opportunities, and areas for improvement in your business operations.',
       icon: <BarChart3 className="w-full h-full" />
     },
     {
+      id: 'business-structure',
       title: 'Business Structure Setup',
       description: 'Guidance on choosing and establishing the optimal business structure for your needs, including company formation, partnerships, and trusts.',
       icon: <Building2 className="w-full h-full" />
     },
     {
+      id: 'cash-flow',
       title: 'Cash Flow Management',
       description: 'Strategies and tools to monitor, analyze, and improve cash flow, ensuring your business maintains adequate liquidity for operations and growth.',
       icon: <DollarSign className="w-full h-full" />
     },
     {
+      id: 'smsf',
       title: 'SMSF Accounting',
       description: 'Specialized accounting and compliance services for Self-Managed Super Funds, helping you navigate complex regulatory requirements.',
       icon: <Landmark className="w-full h-full" />
     },
     {
+      id: 'audit-protection',
       title: 'Audit Protection',
       description: 'Proactive measures to ensure your financial records are audit-ready, with support and representation in case of regulatory audits.',
       icon: <ShieldCheck className="w-full h-full" />
     },
     {
+      id: 'budgeting',
       title: 'Budgeting & Forecasting',
       description: 'Development of realistic budgets and financial forecasts to guide business planning, resource allocation, and performance evaluation.',
       icon: <TrendingUp className="w-full h-full" />
@@ -53,7 +59,7 @@ const ServicesPage = () => {
       
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pt-20">
+        <main className="flex-grow pt-16">
           {/* Hero Section */}
           <section className="bg-apt-blue text-white py-20 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-apt-blue to-apt-lightblue/70 mix-blend-overlay" />
@@ -193,15 +199,17 @@ const ServicesPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {specializedServices.map((service, index) => (
                   <div key={index} className="animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                    <div className="bg-white rounded-lg p-6 shadow-sm card-hover border border-gray-100 h-full">
-                      <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                        <div className="text-apt-blue w-8 h-8">
-                          {service.icon}
+                    <Link to={`/specialized-services/${service.id}`} className="block h-full">
+                      <div className="bg-white rounded-lg p-6 shadow-sm card-hover border border-gray-100 h-full">
+                        <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                          <div className="text-apt-blue w-8 h-8">
+                            {service.icon}
+                          </div>
                         </div>
+                        <h3 className="text-xl font-medium mb-3">{service.title}</h3>
+                        <p className="text-apt-text">{service.description}</p>
                       </div>
-                      <h3 className="text-xl font-medium mb-3">{service.title}</h3>
-                      <p className="text-apt-text">{service.description}</p>
-                    </div>
+                    </Link>
                   </div>
                 ))}
               </div>

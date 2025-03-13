@@ -2,9 +2,64 @@
 import { Helmet } from 'react-helmet';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import { Check, Users, Award, BadgeCheck } from 'lucide-react';
+import { Check, Users, Award, BadgeCheck, MapPin, Mail, Phone, ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const AboutPage = () => {
+  const values = [
+    {
+      id: 'integrity',
+      title: 'Integrity',
+      icon: <Check className="h-8 w-8 text-apt-blue" />,
+      description: 'We adhere to the highest ethical standards and are committed to honesty and transparency in all our dealings.',
+      details: 'Our commitment to integrity means we always put ethical considerations at the forefront of our practice. We believe in complete transparency with our clients, providing honest assessments and recommendations even when they might not be what clients initially want to hear. This foundation of trust is essential to building meaningful, long-term relationships with our clients.'
+    },
+    {
+      id: 'client-focus',
+      title: 'Client Focus',
+      icon: <Users className="h-8 w-8 text-apt-blue" />,
+      description: 'We prioritize understanding our clients' needs and delivering personalized solutions that drive their success.',
+      details: 'Client focus is at the heart of everything we do. We take the time to understand each client's unique business challenges, goals, and vision. By deeply understanding your business, we can provide tailored financial services that address your specific needs rather than offering one-size-fits-all solutions. Your success is our success.'
+    },
+    {
+      id: 'excellence',
+      title: 'Excellence',
+      icon: <Award className="h-8 w-8 text-apt-blue" />,
+      description: 'We strive for excellence in all aspects of our work, continuously improving our skills and processes.',
+      details: 'Excellence is not just a goal but a continuous journey. We regularly invest in professional development, stay current with industry trends and regulatory changes, and continuously refine our processes to deliver the highest quality financial services. We hold ourselves to exacting standards and are never satisfied with merely meeting expectations—we aim to exceed them.'
+    },
+    {
+      id: 'reliability',
+      title: 'Reliability',
+      icon: <BadgeCheck className="h-8 w-8 text-apt-blue" />,
+      description: 'Our clients can count on us to deliver accurate, timely services they can depend on for critical decisions.',
+      details: 'When you work with Affinity Altitude Accumate, you can count on us to deliver consistent, dependable service. We understand that businesses rely on accurate financial information to make critical decisions, and we take this responsibility seriously. We honor our commitments, meet our deadlines, and ensure that our work is accurate and thorough.'
+    }
+  ];
+
+  const journey = [
+    {
+      year: "Our Foundation",
+      title: "A New Beginning",
+      description: "Affinity Altitude Accumate was founded with a vision to provide fresh perspectives in financial services. While we're new to the market, our team brings years of combined experience and a passion for innovation."
+    },
+    {
+      year: "Our Approach",
+      title: "Client-Centered Innovation",
+      description: "We combine traditional accounting expertise with modern technology and innovative approaches, creating a unique service model that addresses the evolving needs of Australian businesses."
+    },
+    {
+      year: "Our Commitment",
+      title: "Building for the Future",
+      description: "As we grow alongside our clients, we remain committed to maintaining personalized service while expanding our capabilities to meet the changing landscape of financial services in Australia."
+    }
+  ];
+
+  const officeLocation = {
+    address: "101 Business Avenue, Sydney NSW 2000, Australia",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=101+Business+Avenue+Sydney+NSW+2000+Australia"
+  };
+
   return (
     <>
       <Helmet>
@@ -14,7 +69,7 @@ const AboutPage = () => {
       
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pt-20">
+        <main className="flex-grow pt-16">
           {/* Hero Section */}
           <section className="bg-apt-blue text-white py-20 relative overflow-hidden">
             <div className="absolute inset-0 bg-apt-blue/30 mix-blend-overlay" />
@@ -39,7 +94,7 @@ const AboutPage = () => {
                 <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">About Our Company</h1>
                 <p className="text-xl text-white/90 leading-relaxed">
                   We're a team of dedicated professionals committed to providing exceptional 
-                  financial services to businesses of all sizes.
+                  financial services to businesses of all sizes across Australia.
                 </p>
               </div>
             </div>
@@ -53,22 +108,27 @@ const AboutPage = () => {
                 <div className="space-y-6 animate-fade-up">
                   <div className="text-apt-blue font-medium">Our Story</div>
                   <h2 className="heading-underline text-3xl md:text-4xl font-semibold mb-6">
-                    A New Vision for Financial Services
+                    A New Vision for Financial Services in Australia
                   </h2>
                   <p className="text-lg">
-                    Affinity Altitude Accumate was founded with a simple mission: to provide small and 
-                    medium-sized businesses with expert financial services that are accessible, 
+                    Affinity Altitude Accumate was founded with a simple mission: to provide Australian 
+                    small and medium-sized businesses with expert financial services that are accessible, 
                     personalized, and of the highest quality.
                   </p>
                   <p>
-                    As a new firm, we bring fresh perspectives and innovative approaches to traditional 
-                    accounting practices. While we may be new to the market, our team combines years of 
+                    As a new firm in the Australian market, we bring fresh perspectives and innovative approaches 
+                    to traditional accounting practices. While we may be new, our team combines years of 
                     professional experience with enthusiasm and dedication to deliver exceptional service.
                   </p>
                   <p>
                     We believe in building strong relationships with our clients from day one, taking the time 
                     to understand your unique needs and challenges. Our commitment is to grow alongside our 
-                    clients, providing the financial clarity and support needed for success.
+                    clients, providing the financial clarity and support needed for success in the Australian 
+                    business landscape.
+                  </p>
+                  <p>
+                    Based in Sydney, we serve clients throughout Australia, bringing a local understanding 
+                    combined with broad expertise in Australian taxation and business regulations.
                   </p>
                 </div>
                 
@@ -88,8 +148,50 @@ const AboutPage = () => {
             </div>
           </section>
           
-          {/* Our Values */}
+          {/* Our Journey */}
           <section className="py-20 bg-apt-gray relative overflow-hidden">
+            <div className="container-tight relative z-10">
+              <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
+                <div className="text-apt-blue font-medium mb-3">Our Journey</div>
+                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-6">
+                  The Affinity Altitude Accumate Story
+                </h2>
+                <p className="text-lg opacity-80">
+                  Every great company has a beginning. Here's how our journey is unfolding.
+                </p>
+              </div>
+              
+              <div className="relative">
+                {/* Timeline connector */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-apt-blue/20 z-0 hidden md:block"></div>
+                
+                {journey.map((milestone, index) => (
+                  <div 
+                    key={index} 
+                    className={`relative z-10 flex flex-col md:flex-row items-center mb-16 last:mb-0 animate-fade-up ${
+                      index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                    }`}
+                    style={{ animationDelay: `${index * 0.2}s` }}
+                  >
+                    <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right md:pr-12' : 'md:text-left md:pl-12'}`}>
+                      <div className="text-apt-blue font-medium mb-2">{milestone.year}</div>
+                      <h3 className="text-2xl font-semibold mb-3">{milestone.title}</h3>
+                      <p>{milestone.description}</p>
+                    </div>
+                    
+                    <div className="my-6 md:my-0 bg-apt-blue text-white h-12 w-12 rounded-full flex items-center justify-center z-20 shadow-lg">
+                      <span className="font-bold">{index + 1}</span>
+                    </div>
+                    
+                    <div className="flex-1 md:invisible"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+          
+          {/* Our Values */}
+          <section className="py-20 bg-white relative overflow-hidden">
             <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-apt-lightblue/10 rounded-full filter blur-3xl"></div>
             <div className="container-tight relative z-10">
               <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
@@ -104,45 +206,86 @@ const AboutPage = () => {
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300" style={{ animationDelay: '0.1s' }}>
-                  <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                    <Check className="h-8 w-8 text-apt-blue" />
+                {values.map((value, index) => (
+                  <a
+                    key={value.id}
+                    href={`/values/${value.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300 group"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6 relative">
+                      {value.icon}
+                      <div className="absolute top-0 right-0 bg-apt-blue text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <ArrowUpRight className="h-4 w-4" />
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
+                    <p>{value.description}</p>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+          
+          {/* Contact Section */}
+          <section className="py-20 bg-apt-gray">
+            <div className="container-tight">
+              <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
+                <div className="text-apt-blue font-medium mb-3">Get In Touch</div>
+                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-6">
+                  Contact Our Team
+                </h2>
+                <p className="text-lg opacity-80">
+                  Have questions or ready to get started? Reach out to us today.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a 
+                  href={officeLocation.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white p-8 rounded-lg shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
+                >
+                  <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                    <MapPin className="h-8 w-8 text-apt-blue" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">Integrity</h3>
-                  <p>
-                    We adhere to the highest ethical standards and are committed to honesty and transparency in all our dealings.
-                  </p>
-                </div>
+                  <h3 className="text-xl font-semibold mb-3">Our Office</h3>
+                  <p className="group-hover:text-apt-blue transition-colors">{officeLocation.address}</p>
+                  <div className="text-apt-blue mt-4 opacity-0 group-hover:opacity-100 transition-all">View Map →</div>
+                </a>
                 
-                <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300" style={{ animationDelay: '0.2s' }}>
-                  <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                    <Users className="h-8 w-8 text-apt-blue" />
+                <a 
+                  href="mailto:contact@affinityaltitudeaccumate.com.au"
+                  className="bg-white p-8 rounded-lg shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
+                >
+                  <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                    <Mail className="h-8 w-8 text-apt-blue" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">Client Focus</h3>
-                  <p>
-                    We prioritize understanding our clients' needs and delivering personalized solutions that drive their success.
-                  </p>
-                </div>
+                  <h3 className="text-xl font-semibold mb-3">Email Us</h3>
+                  <p className="group-hover:text-apt-blue transition-colors">contact@affinityaltitudeaccumate.com.au</p>
+                  <div className="text-apt-blue mt-4 opacity-0 group-hover:opacity-100 transition-all">Send Email →</div>
+                </a>
                 
-                <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300" style={{ animationDelay: '0.3s' }}>
-                  <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                    <Award className="h-8 w-8 text-apt-blue" />
+                <a 
+                  href="tel:+61234567890"
+                  className="bg-white p-8 rounded-lg shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
+                >
+                  <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                    <Phone className="h-8 w-8 text-apt-blue" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">Excellence</h3>
-                  <p>
-                    We strive for excellence in all aspects of our work, continuously improving our skills and processes.
-                  </p>
-                </div>
-                
-                <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300" style={{ animationDelay: '0.4s' }}>
-                  <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                    <BadgeCheck className="h-8 w-8 text-apt-blue" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3">Reliability</h3>
-                  <p>
-                    Our clients can count on us to deliver accurate, timely services they can depend on for critical decisions.
-                  </p>
-                </div>
+                  <h3 className="text-xl font-semibold mb-3">Call Us</h3>
+                  <p className="group-hover:text-apt-blue transition-colors">+61 2 3456 7890</p>
+                  <div className="text-apt-blue mt-4 opacity-0 group-hover:opacity-100 transition-all">Call Now →</div>
+                </a>
+              </div>
+              
+              <div className="text-center mt-12">
+                <Link to="/contact" className="btn-primary">
+                  Contact Us Now
+                </Link>
               </div>
             </div>
           </section>

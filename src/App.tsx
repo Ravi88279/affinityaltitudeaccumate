@@ -12,6 +12,9 @@ import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 import { HelmetProvider } from 'react-helmet-async';
 import EditorBanner from "./components/EditorBanner";
+import ScrollToTop from "./components/ScrollToTop";
+import SpecializedServicePage from "./pages/SpecializedServicePage";
+import ValueDetailPage from "./pages/ValueDetailPage";
 
 const queryClient = new QueryClient();
 
@@ -22,11 +25,14 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/services/:serviceId" element={<ServiceDetailPage />} />
+            <Route path="/specialized-services/:serviceId" element={<SpecializedServicePage />} />
+            <Route path="/values/:valueId" element={<ValueDetailPage />} />
             <Route path="/contact" element={<ContactPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

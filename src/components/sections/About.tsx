@@ -11,6 +11,33 @@ const About = () => {
     'Strong focus on client communication',
     'Up-to-date with latest tax regulations'
   ];
+  
+  const values = [
+    {
+      id: 'integrity',
+      title: 'Integrity',
+      icon: 'check-circle',
+      description: 'We adhere to the highest ethical standards in all our dealings'
+    },
+    {
+      id: 'client-focus',
+      title: 'Client Focus',
+      icon: 'users',
+      description: 'Your success is our priority in everything we do'
+    },
+    {
+      id: 'excellence',
+      title: 'Excellence',
+      icon: 'award',
+      description: 'We strive for excellence in all aspects of our service'
+    },
+    {
+      id: 'reliability',
+      title: 'Reliability',
+      icon: 'shield',
+      description: 'Consistent and dependable service you can count on'
+    }
+  ];
 
   return (
     <section className="section-padding bg-apt-gray">
@@ -57,6 +84,21 @@ const About = () => {
                 </li>
               ))}
             </ul>
+            
+            <div className="grid grid-cols-2 gap-3 mt-6">
+              {values.map((value) => (
+                <Link 
+                  to={`/values/${value.id}`} 
+                  key={value.id}
+                  className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 text-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <h3 className="text-apt-blue font-medium mb-1">{value.title}</h3>
+                  <p className="text-sm text-apt-text">{value.description}</p>
+                </Link>
+              ))}
+            </div>
             
             <div className="pt-4">
               <Link to="/about" className="btn-ghost">

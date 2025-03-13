@@ -6,6 +6,7 @@ import Hero from '@/components/sections/Hero';
 import Services from '@/components/sections/Services';
 import About from '@/components/sections/About';
 import Contact from '@/components/sections/Contact';
+import Faq from '@/components/sections/Faq';
 
 const Index = () => {
   return (
@@ -17,10 +18,11 @@ const Index = () => {
       
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow">
+        <main className="flex-grow pt-16">
           <Hero />
           <Services />
           <About />
+          <Faq />
           <Contact />
         </main>
         <Footer />
