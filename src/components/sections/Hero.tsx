@@ -4,7 +4,7 @@ import { ChevronRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 overflow-hidden bg-[#f9f9ff]">
+    <section className="relative pt-24 pb-16 md:pt-32 overflow-hidden bg-[#f9f9ff] mt-16">
       <div className="absolute inset-0 bg-gradient-to-r from-[#f9f9ff] to-[#f0f0ff] -z-10">
         <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-10"></div>
       </div>

@@ -3,7 +3,7 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-    <section className="bg-apt-blue text-white py-20 relative overflow-hidden">
+    <section className="bg-apt-blue text-white py-20 relative overflow-hidden mt-16">
       <div className="absolute inset-0 bg-apt-blue/30 mix-blend-overlay" />
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(15)].map((_, i) => (
