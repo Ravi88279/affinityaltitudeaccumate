@@ -1,4 +1,3 @@
-
 import { Helmet } from 'react-helmet';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -18,8 +17,8 @@ const AboutPage = () => {
       id: 'client-focus',
       title: 'Client Focus',
       icon: <Users className="h-8 w-8 text-apt-blue" />,
-      description: 'We prioritize understanding our clients' needs and delivering personalized solutions that drive their success.',
-      details: 'Client focus is at the heart of everything we do. We take the time to understand each client's unique business challenges, goals, and vision. By deeply understanding your business, we can provide tailored financial services that address your specific needs rather than offering one-size-fits-all solutions. Your success is our success.'
+      description: "We prioritize understanding our clients' needs and delivering personalized solutions that drive their success.",
+      details: "Client focus is at the heart of everything we do. We take the time to understand each client's unique business challenges, goals, and vision. By deeply understanding your business, we can provide tailored financial services that address your specific needs rather than offering one-size-fits-all solutions. Your success is our success."
     },
     {
       id: 'excellence',
@@ -207,11 +206,9 @@ const AboutPage = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {values.map((value, index) => (
-                  <a
+                  <Link
                     key={value.id}
-                    href={`/values/${value.id}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    to={`/values/${value.id}`}
                     className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300 group"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
@@ -223,7 +220,7 @@ const AboutPage = () => {
                     </div>
                     <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
                     <p>{value.description}</p>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

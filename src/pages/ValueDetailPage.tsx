@@ -41,8 +41,8 @@ const ValueDetailPage = () => {
       title: 'Client Focus',
       icon: <Users className="h-8 w-8 text-white" />,
       color: 'bg-blue-600',
-      description: 'We prioritize understanding our clients' needs and delivering personalized solutions that drive their success.',
-      details: 'Client focus is at the heart of everything we do. We take the time to understand each client's unique business challenges, goals, and vision. By deeply understanding your business, we can provide tailored financial services that address your specific needs rather than offering one-size-fits-all solutions. Your success is our success.',
+      description: "We prioritize understanding our clients' needs and delivering personalized solutions that drive their success.",
+      details: "Client focus is at the heart of everything we do. We take the time to understand each client's unique business challenges, goals, and vision. By deeply understanding your business, we can provide tailored financial services that address your specific needs rather than offering one-size-fits-all solutions. Your success is our success.",
       practices: [
         'Taking time to understand your business objectives',
         'Tailoring our services to meet your specific needs',
