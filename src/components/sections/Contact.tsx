@@ -149,22 +149,25 @@ const Contact = () => {
               </ul>
             </div>
             
-            {/* FAQ Section */}
+            {/* FAQ Section with Improved Dropdown */}
             <div>
               <h3 className="text-2xl font-medium mb-6">Frequently Asked Questions</h3>
               <div className="space-y-4">
                 {faqItems.map((faq, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
+                  <div key={index} className="border border-gray-200 rounded-lg overflow-hidden transition-all duration-300 hover:border-apt-blue/30">
                     <button
                       onClick={() => toggleFaq(index)}
                       className="flex w-full justify-between items-center text-left p-4 hover:bg-gray-50 transition-colors"
+                      aria-expanded={openFaqIndex === index}
+                      aria-controls={`faq-answer-${index}`}
                     >
                       <span className="font-medium">{faq.question}</span>
-                      <span className="ml-2 bg-apt-blue/10 rounded-full p-1 text-apt-blue">
+                      <span className={`ml-2 ${openFaqIndex === index ? 'bg-apt-blue text-white' : 'bg-apt-blue/10 text-apt-blue'} rounded-full p-1 transition-colors duration-300`}>
                         {openFaqIndex === index ? <Minus size={18} /> : <Plus size={18} />}
                       </span>
                     </button>
                     <div 
+                      id={`faq-answer-${index}`}
                       className={`transition-all duration-300 overflow-hidden ${
                         openFaqIndex === index ? 'max-h-40 p-4 bg-gray-50' : 'max-h-0'
                       }`}

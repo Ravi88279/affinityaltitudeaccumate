@@ -12,9 +12,13 @@ const Footer = () => {
       <div className="container-tight">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 py-16">
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold text-white">
-              <span className="text-apt-lightblue">Affinity Altitude</span> Accumate
-            </h3>
+            <div className="mb-4">
+              <img 
+                src="/lovable-uploads/93af181c-c887-427a-8bc1-794156f6ad6b.png" 
+                alt="Affinity Altitude Accumate Logo" 
+                className="h-12 w-auto mb-2" 
+              />
+            </div>
             <p className="text-gray-300 text-sm max-w-md">
               We provide expert bookkeeping, accounting, and taxation services to help your business thrive.
               Our professional team is dedicated to delivering accurate and timely financial solutions.
