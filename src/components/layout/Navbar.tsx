@@ -48,7 +48,9 @@ const Navbar = () => {
       <div className="container-tight">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Logo variant="full" className="z-20" />
+          <Link to="/">
+            <Logo variant="full" className="z-20" />
+          </Link>
           
           {/* Desktop Menu */}
           <nav className="hidden md:flex space-x-6 lg:space-x-8">
