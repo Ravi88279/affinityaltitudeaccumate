@@ -12,33 +12,6 @@ const About = () => {
     'Up-to-date with latest tax regulations'
   ];
 
-  const principles = [
-    {
-      id: 'integrity',
-      title: 'Integrity',
-      description: 'We adhere to the highest ethical standards and are committed to honesty and transparency in all our dealings.',
-      icon: 'check'
-    },
-    {
-      id: 'client-focus',
-      title: 'Client Focus',
-      description: 'We prioritize understanding our clients\' needs and delivering personalized solutions that drive their success.',
-      icon: 'users'
-    },
-    {
-      id: 'excellence',
-      title: 'Excellence',
-      description: 'We strive for excellence in all aspects of our work, continuously improving our skills and processes.',
-      icon: 'award'
-    },
-    {
-      id: 'reliability',
-      title: 'Reliability',
-      description: 'Our clients can count on us to deliver accurate, timely services they can depend on for critical decisions.',
-      icon: 'badge-check'
-    }
-  ];
-
   return (
     <section className="section-padding bg-apt-gray">
       <div className="container-tight">
@@ -84,26 +57,6 @@ const About = () => {
                 </li>
               ))}
             </ul>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
-              {principles.map((principle) => (
-                <a 
-                  key={principle.id}
-                  href={`/values/${principle.id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center p-3 bg-white rounded-md hover:shadow-md transition-all duration-300 group"
-                >
-                  <div className="bg-apt-blue/10 rounded-full w-10 h-10 flex items-center justify-center mr-3 group-hover:bg-apt-blue/20 transition-all duration-300">
-                    <span className="text-apt-blue">{principle.title.charAt(0)}</span>
-                  </div>
-                  <div>
-                    <h3 className="font-medium group-hover:text-apt-blue transition-colors duration-300">{principle.title}</h3>
-                    <p className="text-sm text-apt-text/80 line-clamp-1">{principle.description}</p>
-                  </div>
-                </a>
-              ))}
-            </div>
             
             <div className="pt-4">
               <Link to="/about" className="btn-ghost">

@@ -10,7 +10,7 @@ interface ServiceCardProps {
   details?: string;
 }
 
-const ServiceCard = ({ title, description, icon, className, details }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, icon, className }: ServiceCardProps) => {
   return (
     <div 
       className={cn(
@@ -25,7 +25,6 @@ const ServiceCard = ({ title, description, icon, className, details }: ServiceCa
       </div>
       <h3 className="text-xl font-medium mb-3">{title}</h3>
       <p className="text-apt-text">{description}</p>
-      {details && <div className="mt-4 text-sm text-apt-text/80">{details}</div>}
     </div>
   );
 };

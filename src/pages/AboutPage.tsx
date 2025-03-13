@@ -5,40 +5,12 @@ import Footer from '@/components/layout/Footer';
 import { Link } from 'react-router-dom';
 import { Check, Users, Award, BadgeCheck, ArrowRight } from 'lucide-react';
 import { useEffect } from 'react';
-import Faq from '@/components/ui/Faq';
-import MapLink from '@/components/ui/MapLink';
 
 const AboutPage = () => {
   // Scroll to top on page load
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+    window.scrollTo(0, 0);
   }, []);
-
-  const faqItems = [
-    {
-      question: "As a new firm, how experienced is your team?",
-      answer: "While Affinity Altitude Accumate is a new firm, our team brings substantial industry experience. Our professionals have worked with various businesses across Australia, providing expert financial services before joining our team. We combine this proven expertise with fresh perspectives and innovative approaches."
-    },
-    {
-      question: "What industries do you specialize in?",
-      answer: "We work with businesses across multiple sectors, with particular expertise in retail, professional services, technology, healthcare, and construction. Our diverse experience allows us to understand industry-specific challenges and opportunities, providing tailored solutions regardless of your sector."
-    },
-    {
-      question: "How do you charge for your services?",
-      answer: "We offer transparent, value-based pricing with several options: fixed monthly fees for ongoing services, project-based pricing for specific engagements, and hourly rates for certain advisory services. We'll discuss your needs and provide clear pricing information before you commit."
-    },
-    {
-      question: "How often will we communicate about my finances?",
-      answer: "Communication frequency depends on your needs and the services we provide. For ongoing clients, we typically schedule monthly or quarterly reviews, with additional check-ins during busy periods or when addressing specific financial matters. We're always accessible for questions or concerns between scheduled meetings."
-    },
-    {
-      question: "What technology platforms do you use?",
-      answer: "We leverage industry-leading accounting software like Xero, MYOB, and QuickBooks, along with specialized tools for tax planning, financial reporting, and data analysis. We're adaptable to your existing systems or can recommend solutions that best fit your business needs."
-    }
-  ];
 
   return (
     <>
@@ -177,7 +149,7 @@ const AboutPage = () => {
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <a href="/values/integrity" target="_blank" rel="noopener noreferrer" className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300 group" style={{ animationDelay: '0.1s' }}>
+                <Link to="/values/integrity" target="_blank" className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300 group" style={{ animationDelay: '0.1s' }}>
                   <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-apt-blue/20 transition-colors duration-300">
                     <Check className="h-8 w-8 text-apt-blue" />
                   </div>
@@ -189,9 +161,9 @@ const AboutPage = () => {
                     <span className="font-medium">Learn more</span>
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
-                </a>
+                </Link>
                 
-                <a href="/values/client-focus" target="_blank" rel="noopener noreferrer" className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300 group" style={{ animationDelay: '0.2s' }}>
+                <Link to="/values/client-focus" target="_blank" className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300 group" style={{ animationDelay: '0.2s' }}>
                   <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-apt-blue/20 transition-colors duration-300">
                     <Users className="h-8 w-8 text-apt-blue" />
                   </div>
@@ -203,9 +175,9 @@ const AboutPage = () => {
                     <span className="font-medium">Learn more</span>
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
-                </a>
+                </Link>
                 
-                <a href="/values/excellence" target="_blank" rel="noopener noreferrer" className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300 group" style={{ animationDelay: '0.3s' }}>
+                <Link to="/values/excellence" target="_blank" className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300 group" style={{ animationDelay: '0.3s' }}>
                   <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-apt-blue/20 transition-colors duration-300">
                     <Award className="h-8 w-8 text-apt-blue" />
                   </div>
@@ -217,9 +189,9 @@ const AboutPage = () => {
                     <span className="font-medium">Learn more</span>
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
-                </a>
+                </Link>
                 
-                <a href="/values/reliability" target="_blank" rel="noopener noreferrer" className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300 group" style={{ animationDelay: '0.4s' }}>
+                <Link to="/values/reliability" target="_blank" className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300 group" style={{ animationDelay: '0.4s' }}>
                   <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-apt-blue/20 transition-colors duration-300">
                     <BadgeCheck className="h-8 w-8 text-apt-blue" />
                   </div>
@@ -231,7 +203,63 @@ const AboutPage = () => {
                     <span className="font-medium">Learn more</span>
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </div>
-                </a>
+                </Link>
+              </div>
+            </div>
+          </section>
+          
+          {/* Our Team */}
+          <section className="py-20 bg-apt-gray">
+            <div className="container-tight">
+              <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
+                <div className="text-apt-blue font-medium mb-3">Our Team</div>
+                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-6">
+                  Meet Our Professionals
+                </h2>
+                <p className="text-lg opacity-80">
+                  Our talented team brings together diverse expertise and shared values to deliver 
+                  exceptional service to our clients.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[
+                  {
+                    name: "Sarah Johnson",
+                    title: "Founder & Director",
+                    bio: "Sarah brings over 15 years of accounting experience, specializing in business advisory and strategic financial planning for Australian businesses.",
+                    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  },
+                  {
+                    name: "Michael Chen",
+                    title: "Senior Accountant",
+                    bio: "Michael specializes in taxation and compliance, helping businesses navigate complex regulatory requirements while optimizing their tax position.",
+                    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  },
+                  {
+                    name: "Amelia Patel",
+                    title: "Financial Analyst",
+                    bio: "Amelia excels at transforming financial data into actionable business insights, with expertise in forecasting and strategic planning.",
+                    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  }
+                ].map((member, index) => (
+                  <div 
+                    key={index} 
+                    className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 animate-fade-up"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-64 object-cover object-center hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="p-6">
+                      <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
+                      <p className="text-apt-blue font-medium mb-4">{member.title}</p>
+                      <p>{member.bio}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
@@ -324,42 +352,62 @@ const AboutPage = () => {
             </div>
           </section>
           
-          {/* Office Location */}
-          <section className="py-20 bg-apt-gray">
-            <div className="container-tight">
-              <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
-                <div className="text-apt-blue font-medium mb-3">Our Location</div>
-                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-6">
-                  Visit Our Office
-                </h2>
-                <p className="text-lg opacity-80 mb-8">
-                  Our centrally located office in Sydney makes it easy for clients to meet with our team.
-                </p>
-                <div className="inline-block">
-                  <MapLink address="123 Financial Street, Sydney, NSW 2000, Australia" className="text-lg font-medium bg-white px-6 py-3 rounded-lg shadow-sm hover:shadow-md transition-all duration-300" />
-                </div>
-                <p className="text-sm text-apt-text/70 mt-3">
-                  Click the address to view on Google Maps
-                </p>
-              </div>
-            </div>
-          </section>
-          
           {/* FAQ Section */}
-          <section className="py-20 bg-white">
+          <section className="py-20 bg-apt-gray">
             <div className="container-tight">
               <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
                 <div className="text-apt-blue font-medium mb-3">FAQ</div>
                 <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-6">
                   Frequently Asked Questions
                 </h2>
-                <p className="text-lg opacity-80 mb-8">
+                <p className="text-lg opacity-80">
                   Find answers to common questions about our company and services.
                 </p>
               </div>
               
-              <div className="max-w-3xl mx-auto">
-                <Faq items={faqItems} />
+              <div className="max-w-3xl mx-auto space-y-4">
+                {[
+                  {
+                    question: "As a new firm, how experienced is your team?",
+                    answer: "While Affinity Altitude Accumate is a new firm, our team brings substantial industry experience. Our professionals have worked with various businesses across Australia, providing expert financial services before joining our team. We combine this proven expertise with fresh perspectives and innovative approaches."
+                  },
+                  {
+                    question: "What industries do you specialize in?",
+                    answer: "We work with businesses across multiple sectors, with particular expertise in retail, professional services, technology, healthcare, and construction. Our diverse experience allows us to understand industry-specific challenges and opportunities, providing tailored solutions regardless of your sector."
+                  },
+                  {
+                    question: "How do you charge for your services?",
+                    answer: "We offer transparent, value-based pricing with several options: fixed monthly fees for ongoing services, project-based pricing for specific engagements, and hourly rates for certain advisory services. We'll discuss your needs and provide clear pricing information before you commit."
+                  },
+                  {
+                    question: "How often will we communicate about my finances?",
+                    answer: "Communication frequency depends on your needs and the services we provide. For ongoing clients, we typically schedule monthly or quarterly reviews, with additional check-ins during busy periods or when addressing specific financial matters. We're always accessible for questions or concerns between scheduled meetings."
+                  },
+                  {
+                    question: "What technology platforms do you use?",
+                    answer: "We leverage industry-leading accounting software like Xero, MYOB, and QuickBooks, along with specialized tools for tax planning, financial reporting, and data analysis. We're adaptable to your existing systems or can recommend solutions that best fit your business needs."
+                  }
+                ].map((faq, index) => (
+                  <div 
+                    key={index} 
+                    className="bg-white rounded-lg shadow-sm overflow-hidden animate-fade-up"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <details className="group">
+                      <summary className="flex justify-between items-center p-6 cursor-pointer font-medium text-lg">
+                        {faq.question}
+                        <span className="transition-transform duration-300 group-open:rotate-180">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </span>
+                      </summary>
+                      <div className="px-6 pb-6 -mt-2">
+                        <p>{faq.answer}</p>
+                      </div>
+                    </details>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
