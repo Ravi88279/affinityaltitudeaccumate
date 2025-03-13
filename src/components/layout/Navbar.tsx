@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
-import Logo from '@/components/ui/Logo';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,15 +40,20 @@ const Navbar = () => {
   return (
     <header 
       className={cn(
-        "fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-2",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-2",
         scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-transparent"
       )}
     >
       <div className="container-tight">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/">
-            <Logo variant="full" className="z-20" />
+          <Link 
+            to="/" 
+            className="relative z-20 font-bold text-xl sm:text-2xl text-apt-darkgray flex items-center hover:scale-105 transition-transform duration-300"
+            aria-label="Affinity Altitude Accumate Logo"
+          >
+            <span className="text-apt-blue">Affinity Altitude</span>
+            <span className="hidden sm:inline">&nbsp;Accumate</span>
           </Link>
           
           {/* Desktop Menu */}
@@ -88,7 +92,6 @@ const Navbar = () => {
               isOpen ? "opacity-100 visible" : "opacity-0 invisible"
             )}
           >
-            <Logo variant="compact" className="absolute top-4 left-4" />
             <nav className="flex flex-col space-y-6 text-center">
               {navLinks.map((link) => (
                 <Link

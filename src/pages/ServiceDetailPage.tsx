@@ -1,5 +1,5 @@
 
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { useParams, Link } from 'react-router-dom';
@@ -19,7 +19,7 @@ const ServiceDetailPage = () => {
     return (
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pt-32 pb-16">
+        <main className="flex-grow pt-24 pb-16">
           <div className="container-tight">
             <div className="text-center py-12">
               <h1 className="text-2xl mb-4">Service Not Found</h1>
@@ -42,7 +42,7 @@ const ServiceDetailPage = () => {
       
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pt-32">
+        <main className="flex-grow pt-20">
           {/* Hero Section */}
           <section className="bg-apt-blue text-white py-16 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-apt-blue to-apt-blue/80 mix-blend-overlay" />
