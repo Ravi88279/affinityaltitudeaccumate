@@ -36,14 +36,14 @@ const AboutPage = () => {
       title: 'Excellence',
       description: 'We strive for excellence in all aspects of our work, continuously improving our skills and processes.',
       icon: <Award className="h-8 w-8 text-apt-blue" />,
-      details: 'Our pursuit of excellence drives us to continuously enhance our expertise, refine our processes, and adopt innovative approaches. We're committed to delivering work of the highest quality that exceeds expectations and helps your business thrive.'
+      details: "Our pursuit of excellence drives us to continuously enhance our expertise, refine our processes, and adopt innovative approaches. We're committed to delivering work of the highest quality that exceeds expectations and helps your business thrive."
     },
     {
       id: 'reliability',
       title: 'Reliability',
       description: 'Our clients can count on us to deliver accurate, timely services they can depend on for critical decisions.',
       icon: <BadgeCheck className="h-8 w-8 text-apt-blue" />,
-      details: 'We understand that reliable financial information is essential for making sound business decisions. That's why we're committed to delivering accurate, timely services that you can depend on. When we make a commitment, we stand by it.'
+      details: "We understand that reliable financial information is essential for making sound business decisions. That's why we're committed to delivering accurate, timely services that you can depend on. When we make a commitment, we stand by it."
     }
   ];
 
