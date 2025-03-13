@@ -56,11 +56,11 @@ const Navbar = () => {
               <img 
                 src="/logo.png" 
                 alt="Affinity Altitude Accumate Logo" 
-                className="h-10 mr-2"
+                className="h-10 w-auto mr-2"
               />
-              <div className="font-bold">
-                <span className="text-apt-blue text-lg sm:text-xl">Affinity Altitude</span>
-                <span className="hidden sm:block text-apt-darkgray text-sm sm:text-lg">Accumate</span>
+              <div className="flex flex-col">
+                <span className="text-apt-blue text-lg sm:text-xl font-bold leading-tight">Affinity Altitude</span>
+                <span className="text-apt-darkgray text-sm sm:text-base">Accumate</span>
               </div>
             </div>
           </Link>

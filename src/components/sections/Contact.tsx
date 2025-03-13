@@ -1,6 +1,11 @@
 
 import { FormEvent, useState } from 'react';
-import { MailIcon, MapPinIcon, PhoneIcon, Send, CheckCircle2 } from 'lucide-react';
+import { MailIcon, MapPinIcon, PhoneIcon, Send, CheckCircle2, Plus, Minus } from 'lucide-react';
+
+type FaqItem = {
+  question: string;
+  answer: string;
+};
 
 const Contact = () => {
   const [formState, setFormState] = useState({
@@ -12,6 +17,7 @@ const Contact = () => {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormState({
@@ -42,6 +48,33 @@ const Contact = () => {
     }, 1500);
   };
   
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
+  
+  const faqItems: FaqItem[] = [
+    {
+      question: "What services do you offer?",
+      answer: "We offer a comprehensive range of financial services including bookkeeping, accounting, taxation, payroll processing, financial reporting, and business advisory services."
+    },
+    {
+      question: "How much do your services cost?",
+      answer: "Our pricing is based on the specific services you require and the complexity of your business needs. We offer transparent, fixed-fee structures so you know exactly what you're paying for. Contact us for a personalized quote."
+    },
+    {
+      question: "How often will we meet to discuss my finances?",
+      answer: "This depends on your needs and preferences. We typically schedule quarterly reviews for most clients, but we can arrange more frequent meetings if your business requires closer financial monitoring."
+    },
+    {
+      question: "Do you work with businesses in specific industries?",
+      answer: "We serve clients across a wide range of industries. Our team has expertise in retail, professional services, construction, healthcare, and hospitality, but we welcome businesses from all sectors."
+    }
+  ];
+  
+  // Office address for Google Maps
+  const officeAddress = "Office no. 1024, 10th floor, Sun Gravitas, near. Shyamal Cross Road, Rajmani Society, Satellite, Ahmedabad, Gujarat 380015";
+  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(officeAddress)}`;
+  
   return (
     <section className="section-padding bg-white relative overflow-hidden">
       {/* Background decoration */}
@@ -67,7 +100,14 @@ const Contact = () => {
                   <MapPinIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" />
                   <div>
                     <h4 className="font-medium mb-1">Our Office</h4>
-                    <p className="opacity-80 group-hover:opacity-100 transition-opacity duration-300">Office no. 1024, 10th floor, Sun Gravitas, near. Shyamal Cross Road, Rajmani Society, Satellite, Ahmedabad, Gujarat 380015</p>
+                    <a 
+                      href={mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="opacity-80 group-hover:opacity-100 transition-opacity duration-300 hover:text-apt-blue"
+                    >
+                      {officeAddress}
+                    </a>
                   </div>
                 </li>
                 <li className="flex items-start group">
@@ -107,6 +147,33 @@ const Contact = () => {
                   <span className="opacity-80">Closed</span>
                 </li>
               </ul>
+            </div>
+            
+            {/* FAQ Section */}
+            <div>
+              <h3 className="text-2xl font-medium mb-6">Frequently Asked Questions</h3>
+              <div className="space-y-4">
+                {faqItems.map((faq, index) => (
+                  <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
+                    <button
+                      onClick={() => toggleFaq(index)}
+                      className="flex w-full justify-between items-center text-left p-4 hover:bg-gray-50 transition-colors"
+                    >
+                      <span className="font-medium">{faq.question}</span>
+                      <span className="ml-2 bg-apt-blue/10 rounded-full p-1 text-apt-blue">
+                        {openFaqIndex === index ? <Minus size={18} /> : <Plus size={18} />}
+                      </span>
+                    </button>
+                    <div 
+                      className={`transition-all duration-300 overflow-hidden ${
+                        openFaqIndex === index ? 'max-h-40 p-4 bg-gray-50' : 'max-h-0'
+                      }`}
+                    >
+                      <p className="text-gray-700">{faq.answer}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           

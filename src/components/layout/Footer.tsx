@@ -4,6 +4,8 @@ import { MailIcon, MapPinIcon, PhoneIcon } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const officeAddress = "Office no. 1024, 10th floor, Sun Gravitas, near. Shyamal Cross Road, Rajmani Society, Satellite, Ahmedabad, Gujarat 380015";
+  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(officeAddress)}`;
   
   return (
     <footer className="bg-apt-darkgray text-white">
@@ -34,7 +36,14 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start group">
                 <MapPinIcon className="w-5 h-5 text-apt-lightblue shrink-0 mr-3 mt-0.5 group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-gray-300 group-hover:text-white transition-colors duration-300">Office no. 1024, 10th floor, Sun Gravitas, near. Shyamal Cross Road, Rajmani Society, Satellite, Ahmedabad, Gujarat 380015</span>
+                <a 
+                  href={mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 group-hover:text-white transition-colors duration-300"
+                >
+                  {officeAddress}
+                </a>
               </li>
               <li className="flex items-center group">
                 <PhoneIcon className="w-5 h-5 text-apt-lightblue shrink-0 mr-3 group-hover:scale-110 transition-transform duration-300" />

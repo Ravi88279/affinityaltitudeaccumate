@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { FormEvent, useState } from 'react';
-import { MailIcon, MapPinIcon, PhoneIcon, Send, CheckCircle2 } from 'lucide-react';
+import { MailIcon, MapPinIcon, PhoneIcon, Send, CheckCircle2, Plus, Minus } from 'lucide-react';
 
 const ContactPage = () => {
   const [formState, setFormState] = useState({
@@ -17,6 +17,7 @@ const ContactPage = () => {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormState({
@@ -48,6 +49,14 @@ const ContactPage = () => {
       }, 5000);
     }, 1500);
   };
+  
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
+  
+  // Office address for Google Maps
+  const officeAddress = "Office no. 1024, 10th floor, Sun Gravitas, near. Shyamal Cross Road, Rajmani Society, Satellite, Ahmedabad, Gujarat 380015";
+  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(officeAddress)}`;
 
   return (
     <>
@@ -108,7 +117,14 @@ const ContactPage = () => {
                         <MapPinIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" />
                         <div>
                           <h4 className="font-medium mb-1">Our Office</h4>
-                          <p className="opacity-80 group-hover:opacity-100 transition-opacity duration-300">Office no. 1024, 10th floor, Sun Gravitas, near. Shyamal Cross Road, Rajmani Society, Satellite, Ahmedabad, Gujarat 380015</p>
+                          <a 
+                            href={mapUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="opacity-80 group-hover:opacity-100 transition-opacity duration-300 hover:text-apt-blue"
+                          >
+                            {officeAddress}
+                          </a>
                         </div>
                       </li>
                       <li className="flex items-start group">
@@ -152,12 +168,19 @@ const ContactPage = () => {
                   
                   <div className="bg-apt-gray p-8 rounded-lg hover:shadow-lg transition-shadow duration-300">
                     <h3 className="text-2xl font-medium mb-4">Location Map</h3>
-                    <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
-                      {/* We'd use an actual map here, but for this example, we'll use a placeholder */}
-                      <div className="w-full h-full flex items-center justify-center bg-apt-blue/10 text-apt-blue">
-                        Interactive Map Would Be Embedded Here
+                    <a 
+                      href={mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block aspect-video bg-gray-200 rounded-lg overflow-hidden hover:opacity-90 transition-opacity"
+                    >
+                      <div className="w-full h-full flex items-center justify-center bg-apt-blue/10 text-apt-blue hover:bg-apt-blue/20 transition-colors">
+                        <div className="text-center">
+                          <MapPinIcon className="h-8 w-8 mx-auto mb-2" />
+                          <p>View on Google Maps</p>
+                        </div>
                       </div>
-                    </div>
+                    </a>
                   </div>
                 </div>
                 
@@ -322,7 +345,7 @@ const ContactPage = () => {
                 </p>
               </div>
               
-              <div className="max-w-4xl mx-auto space-y-6">
+              <div className="max-w-4xl mx-auto space-y-4">
                 {[
                   {
                     question: "What services do you offer?",
@@ -338,7 +361,7 @@ const ContactPage = () => {
                   },
                   {
                     question: "Can you help with tax planning and minimization?",
-                    answer: "Yes, our tax specialists are experienced in developing strategies to legally minimize your tax obligations while ensuring full compliance with Indian tax laws and regulations."
+                    answer: "Yes, our tax specialists are experienced in developing strategies to legally minimize your tax obligations while ensuring full compliance with Australian tax laws and regulations."
                   },
                   {
                     question: "Do you work with businesses in specific industries?",
@@ -347,11 +370,25 @@ const ContactPage = () => {
                 ].map((faq, index) => (
                   <div 
                     key={index} 
-                    className="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-1 transition-transform duration-300"
+                    className="bg-white rounded-lg shadow-sm animate-fade-up transition-all duration-300"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <h3 className="text-xl font-medium mb-3">{faq.question}</h3>
-                    <p className="opacity-80">{faq.answer}</p>
+                    <button
+                      onClick={() => toggleFaq(index)}
+                      className="flex w-full justify-between items-center text-left p-6 hover:bg-gray-50 transition-colors rounded-lg"
+                    >
+                      <h3 className="text-xl font-medium">{faq.question}</h3>
+                      <span className="ml-4 bg-apt-blue/10 rounded-full p-2 text-apt-blue shrink-0">
+                        {openFaqIndex === index ? <Minus size={18} /> : <Plus size={18} />}
+                      </span>
+                    </button>
+                    <div 
+                      className={`transition-all duration-300 overflow-hidden px-6 ${
+                        openFaqIndex === index ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0 pb-0'
+                      }`}
+                    >
+                      <p className="opacity-80">{faq.answer}</p>
+                    </div>
                   </div>
                 ))}
               </div>
