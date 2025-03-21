@@ -14,7 +14,7 @@ const Hero = () => {
         {[...Array(15)].map((_, i) => (
           <div
             key={i}
-            className="absolute rounded-full bg-apt-blue/20 animate-float"
+            className="absolute rounded-full bg-apt-purple/20 animate-float"
             style={{
               width: `${Math.random() * 30 + 10}px`,
               height: `${Math.random() * 30 + 10}px`,
@@ -30,13 +30,13 @@ const Hero = () => {
       <div className="container-tight min-h-[70vh] md:min-h-[80vh] flex flex-col justify-center relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
-            <div className="inline-block bg-apt-blue/10 text-apt-blue font-medium px-4 py-1 rounded-full text-sm animate-pulse-slow">
+            <div className="inline-block bg-apt-purple/10 text-apt-purple font-medium px-4 py-1 rounded-full text-sm animate-pulse-slow">
               Professional Accounting & Bookkeeping Services
             </div>
             
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight">
               Financial Solutions <br />
-              <span className="text-apt-blue animate-text-gradient bg-gradient-to-r from-apt-blue via-apt-lightblue to-apt-blue bg-clip-text text-transparent bg-300% font-bold">for Your Business</span>
+              <span className="text-apt-purple animate-text-gradient bg-gradient-to-r from-apt-purple via-apt-lightpurple to-apt-purple bg-clip-text text-transparent bg-300% font-bold">for Your Business</span>
             </h1>
             
             <p className="text-lg max-w-lg opacity-90 animate-fade-up" style={{ animationDelay: '0.2s' }}>
@@ -57,14 +57,14 @@ const Hero = () => {
           
           <div className="relative flex justify-center lg:justify-end animate-fade-in">
             <div className="relative">
-              <div className="absolute inset-0 bg-apt-blue rounded-2xl -rotate-3 opacity-10 animate-pulse-slow"></div>
+              <div className="absolute inset-0 bg-apt-purple rounded-2xl -rotate-3 opacity-10 animate-pulse-slow"></div>
               <img 
                 src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
                 alt="Business professionals reviewing financial documents"
                 className="rounded-2xl shadow-xl rotate-3 transition-all duration-500 hover:rotate-0 relative z-10 object-cover h-[400px] md:h-[500px] w-full"
               />
               <div className="absolute -bottom-4 -right-4 bg-white px-5 py-3 rounded-lg shadow-lg z-20 animate-bounce-slow">
-                <span className="font-bold text-apt-blue">Financial Excellence</span>
+                <span className="font-bold text-apt-purple">Financial Excellence</span>
               </div>
             </div>
           </div>
