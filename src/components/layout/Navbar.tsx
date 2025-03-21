@@ -56,13 +56,13 @@ const Navbar = () => {
           {/* Logo with Animation and Firm Name */}
           <Link to="/" className="relative z-20 flex items-center hover:scale-105 transition-transform duration-300 gap-3" aria-label="Affinity Altitude Accumate Logo">
             <img 
-              src="/lovable-uploads/8931f258-b569-4495-97e4-fd06fd47822e.png" 
+              src="/lovable-uploads/93af181c-c887-427a-8bc1-794156f6ad6b.png" 
               alt="Affinity Altitude Accumate Logo" 
               className="h-12 w-auto animate-pulse-slow hover:animate-none transition-all" 
             />
             <span className={cn(
               "font-semibold text-lg hidden sm:block transition-colors duration-300",
-              scrolled ? "text-apt-darkgray" : "text-apt-purple"
+              scrolled ? "text-apt-darkgray" : "text-apt-blue"
             )}>
               Affinity Altitude Accumate
             </span>
@@ -78,7 +78,7 @@ const Navbar = () => {
                   "nav-link relative overflow-hidden", 
                   isActive(link.path) 
                     ? "nav-link-active" 
-                    : "after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:translate-y-1 after:bg-apt-purple after:opacity-0 hover:after:translate-y-0 hover:after:opacity-100 after:transition-all after:duration-300"
+                    : "after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:translate-y-1 after:bg-apt-blue after:opacity-0 hover:after:translate-y-0 hover:after:opacity-100 after:transition-all after:duration-300"
                 )}
               >
                 {link.name}
@@ -102,11 +102,11 @@ const Navbar = () => {
           )}>
             <div className="p-4 mb-6 flex flex-col items-center">
               <img 
-                src="/lovable-uploads/8931f258-b569-4495-97e4-fd06fd47822e.png" 
+                src="/lovable-uploads/93af181c-c887-427a-8bc1-794156f6ad6b.png" 
                 alt="Affinity Altitude Accumate Logo" 
                 className="h-10 w-auto mb-2" 
               />
-              <span className="font-semibold text-apt-purple">Affinity Altitude Accumate</span>
+              <span className="font-semibold text-apt-blue">Affinity Altitude Accumate</span>
             </div>
             <nav className="flex flex-col space-y-6 text-center">
               {navLinks.map(link => (

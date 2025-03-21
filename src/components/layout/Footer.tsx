@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="mb-4 flex items-center gap-3">
               <img 
-                src="/lovable-uploads/8931f258-b569-4495-97e4-fd06fd47822e.png" 
+                src="/lovable-uploads/93af181c-c887-427a-8bc1-794156f6ad6b.png" 
                 alt="Affinity Altitude Accumate Logo" 
                 className="h-12 w-auto mb-2" 
               />

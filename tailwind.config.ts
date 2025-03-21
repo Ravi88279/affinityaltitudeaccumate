@@ -58,8 +58,8 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				apt: {
-					purple: '#832A8D',      // Primary purple from affinity logo
-					lightpurple: '#A94FB6', // Lighter purple shade
+					blue: '#335B8E',
+					lightblue: '#6C9DE0',
 					gray: '#F5F5F5',
 					darkgray: '#333333',
 					text: '#555555',
@@ -129,7 +129,7 @@ export default {
 				'300%': '300%',
 			},
 			backgroundImage: {
-				'grid-pattern': "linear-gradient(to right, rgba(131,42,141,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(131,42,141,0.05) 1px, transparent 1px)"
+				'grid-pattern': "linear-gradient(to right, rgba(51,91,142,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(51,91,142,0.05) 1px, transparent 1px)"
 			}
 		}
 	},
