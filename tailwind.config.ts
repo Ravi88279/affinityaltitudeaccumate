@@ -60,15 +60,26 @@ export default {
 				apt: {
 					purple: '#832A8D',      // Primary purple from affinity logo
 					lightpurple: '#A94FB6', // Lighter purple shade
+					darkpurple: '#6a2273',  // Darker purple
+					blue: '#204080',        // Added blue from affinityoutsourcing.net
+					lightblue: '#4F85D6',   // Lighter blue shade
 					gray: '#F5F5F5',
 					darkgray: '#333333',
 					text: '#555555',
 				}
 			},
+			fontFamily: {
+				sans: ['Montserrat', 'sans-serif'],
+				heading: ['Poppins', 'sans-serif'],
+			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			boxShadow: {
+				'affinity': '0 4px 20px rgba(0, 0, 0, 0.08)',
+				'affinity-hover': '0 10px 30px rgba(0, 0, 0, 0.12)',
 			},
 			keyframes: {
 				'accordion-down': {
@@ -129,6 +140,8 @@ export default {
 				'300%': '300%',
 			},
 			backgroundImage: {
+				'affinity-gradient': 'linear-gradient(135deg, #832A8D 0%, #A94FB6 100%)',
+				'affinity-blue-gradient': 'linear-gradient(135deg, #204080 0%, #4F85D6 100%)',
 				'grid-pattern': "linear-gradient(to right, rgba(131,42,141,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(131,42,141,0.05) 1px, transparent 1px)"
 			}
 		}

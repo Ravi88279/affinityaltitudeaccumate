@@ -1,11 +1,11 @@
 
 import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, CheckCircle2 } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 overflow-hidden bg-[#f9f9ff]">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#f9f9ff] to-[#f0f0ff] -z-10">
+    <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-[#f9faff]">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#f9faff] to-[#f0f0ff] -z-10">
         <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-10"></div>
       </div>
       
@@ -30,13 +30,13 @@ const Hero = () => {
       <div className="container-tight min-h-[70vh] md:min-h-[80vh] flex flex-col justify-center relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
-            <div className="inline-block bg-apt-purple/10 text-apt-purple font-medium px-4 py-1 rounded-full text-sm animate-pulse-slow">
+            <div className="inline-block bg-apt-purple/10 text-apt-purple font-medium px-4 py-1 rounded-full text-sm">
               Professional Accounting & Bookkeeping Services
             </div>
             
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-apt-darkgray">
               Financial Solutions <br />
-              <span className="text-apt-purple animate-text-gradient bg-gradient-to-r from-apt-purple via-apt-lightpurple to-apt-purple bg-clip-text text-transparent bg-300% font-bold">for Your Business</span>
+              <span className="text-apt-purple animate-text-gradient bg-gradient-to-r from-apt-purple via-apt-lightpurple to-apt-purple bg-clip-text text-transparent bg-300%">for Your Business</span>
             </h1>
             
             <p className="text-lg max-w-lg opacity-90 animate-fade-up" style={{ animationDelay: '0.2s' }}>
@@ -44,14 +44,31 @@ const Hero = () => {
               Our professional team is dedicated to delivering accurate and timely financial solutions.
             </p>
             
-            <div className="flex flex-wrap gap-4 pt-2 animate-fade-up relative z-30" style={{ animationDelay: '0.4s' }}>
-              <Link to="/contact" className="btn-primary flex items-center group hover:scale-105 transition-transform duration-300">
-                Get Started
-                <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-              <Link to="/services" className="btn-ghost hover:scale-105 transition-transform duration-300">
-                Our Services
-              </Link>
+            <div className="space-y-4 md:space-y-0 pt-2 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+              <div className="flex flex-wrap gap-4">
+                <Link to="/contact" className="bg-affinity-gradient text-white px-6 py-3 rounded-md font-medium flex items-center group shadow-md hover:shadow-lg transition-all">
+                  Get Started
+                  <ChevronRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+                <Link to="/services" className="btn-ghost hover:scale-105 transition-transform duration-300">
+                  Our Services
+                </Link>
+              </div>
+              
+              <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 mt-8">
+                <div className="flex items-center">
+                  <CheckCircle2 className="text-apt-purple mr-2 h-5 w-5" />
+                  <span className="text-sm font-medium">Expert Team</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle2 className="text-apt-purple mr-2 h-5 w-5" />
+                  <span className="text-sm font-medium">Personalized Services</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle2 className="text-apt-purple mr-2 h-5 w-5" />
+                  <span className="text-sm font-medium">Affordable Plans</span>
+                </div>
+              </div>
             </div>
           </div>
           
@@ -71,7 +88,7 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Enhanced wave shape divider with animation */}
+      {/* Wave shape divider with animation */}
       <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none z-10">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full h-auto animate-wave-slow relative">
           <path fill="#ffffff" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,224C672,213,768,171,864,165.3C960,160,1056,192,1152,186.7C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>

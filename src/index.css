@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -81,7 +83,7 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-medium tracking-tight text-apt-darkgray;
+    @apply font-heading font-semibold tracking-tight text-apt-darkgray;
   }
   
   h1 {
@@ -107,8 +109,13 @@
   }
   
   .btn-primary {
-    @apply bg-apt-purple text-white px-6 py-3 rounded-md font-medium transition-all
-           hover:bg-apt-lightpurple focus:outline-none focus:ring-2 focus:ring-apt-purple/30;
+    @apply bg-apt-purple text-white px-6 py-3 rounded-md font-medium transition-all shadow-md
+           hover:bg-apt-lightpurple hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-apt-purple/30;
+  }
+  
+  .btn-secondary {
+    @apply bg-apt-blue text-white px-6 py-3 rounded-md font-medium transition-all shadow-md
+           hover:bg-apt-lightblue hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-apt-blue/30;
   }
   
   .btn-ghost {
@@ -140,13 +147,24 @@
     @apply text-apt-purple after:w-full;
   }
   
+  /* Card styles */
+  .affinity-card {
+    @apply bg-white rounded-lg shadow-affinity p-6 transition-all duration-300 hover:shadow-affinity-hover;
+  }
+  
   /* Card hover effect */
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-affinity-hover hover:-translate-y-1;
   }
   
   /* Image effect */
   .img-zoom {
     @apply transition-transform duration-500 hover:scale-105;
+  }
+  
+  /* Button hover */
+  .btn-hover {
+    @apply relative overflow-hidden before:absolute before:inset-0 before:bg-white/20 
+           before:translate-x-full hover:before:translate-x-[-100%] before:transition-transform before:duration-500;
   }
 }

@@ -41,3 +41,48 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Affinity Outsourcing inspired styles */
+.affinity-gradient-text {
+  @apply bg-clip-text text-transparent bg-affinity-gradient;
+}
+
+.affinity-section {
+  @apply py-16 md:py-24 relative overflow-hidden;
+}
+
+.affinity-section-purple {
+  @apply bg-gradient-to-r from-apt-purple to-apt-lightpurple text-white;
+}
+
+.affinity-section-light {
+  @apply bg-apt-gray;
+}
+
+.affinity-card {
+  @apply rounded-lg shadow-affinity overflow-hidden transition-all duration-300;
+}
+
+.affinity-card:hover {
+  @apply shadow-affinity-hover -translate-y-1;
+}
+
+.affinity-icon-box {
+  @apply flex items-center justify-center rounded-full w-16 h-16 mb-4 transition-transform duration-300;
+}
+
+.affinity-icon-purple {
+  @apply bg-apt-purple/10 text-apt-purple;
+}
+
+.affinity-icon-blue {
+  @apply bg-apt-blue/10 text-apt-blue;
+}
+
+.affinity-divider {
+  @apply h-1 w-20 bg-apt-purple rounded-full my-4;
+}
+
+.affinity-divider-center {
+  @apply mx-auto;
+}

@@ -1,6 +1,6 @@
 
 import { FormEvent, useState } from 'react';
-import { MailIcon, MapPinIcon, PhoneIcon, Send, CheckCircle2, Plus, Minus } from 'lucide-react';
+import { MailIcon, MapPinIcon, PhoneIcon, Send, CheckCircle2, Plus, Minus, Clock } from 'lucide-react';
 
 type FaqItem = {
   question: string;
@@ -76,85 +76,88 @@ const Contact = () => {
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(officeAddress)}`;
   
   return (
-    <section className="section-padding bg-white relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-apt-blue/10 rounded-full filter blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-apt-lightblue/10 rounded-full filter blur-3xl"></div>
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-apt-purple/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-apt-purple/5 rounded-full blur-3xl"></div>
       
       <div className="container-tight relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-up">
-          <div className="text-apt-blue font-medium mb-3">Contact Us</div>
-          <h2 className="heading-underline-center mb-6">Get In Touch With Our Team</h2>
+          <div className="inline-block bg-apt-purple/10 text-apt-purple font-medium px-4 py-1 rounded-full text-sm mb-4">
+            Contact Us
+          </div>
+          <h2 className="heading-underline-center text-3xl md:text-4xl font-bold mb-6">Get In Touch With Our Team</h2>
           <p className="text-lg opacity-80">
             Have questions about our services? Ready to get started? 
             Our team is here to help with all your financial needs.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div className="space-y-8 animate-fade-up">
-            <div>
-              <h3 className="text-2xl font-medium mb-6">Contact Information</h3>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="lg:col-span-5 space-y-8 animate-fade-up">
+            <div className="bg-white rounded-lg shadow-affinity p-6 border border-gray-100">
+              <h3 className="text-2xl font-bold mb-6 text-apt-darkgray">Contact Information</h3>
               <ul className="space-y-6">
                 <li className="flex items-start group">
-                  <MapPinIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" />
+                  <div className="bg-apt-purple/10 rounded-full p-3 text-apt-purple group-hover:bg-apt-purple group-hover:text-white transition-colors duration-300 mr-4 shrink-0">
+                    <MapPinIcon className="w-6 h-6" />
+                  </div>
                   <div>
                     <h4 className="font-medium mb-1">Our Office</h4>
                     <a 
                       href={mapUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="opacity-80 group-hover:opacity-100 transition-opacity duration-300 hover:text-apt-blue"
+                      className="opacity-80 group-hover:opacity-100 transition-opacity duration-300 hover:text-apt-purple"
                     >
                       {officeAddress}
                     </a>
                   </div>
                 </li>
                 <li className="flex items-start group">
-                  <PhoneIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" />
+                  <div className="bg-apt-purple/10 rounded-full p-3 text-apt-purple group-hover:bg-apt-purple group-hover:text-white transition-colors duration-300 mr-4 shrink-0">
+                    <PhoneIcon className="w-6 h-6" />
+                  </div>
                   <div>
                     <h4 className="font-medium mb-1">Phone Number</h4>
-                    <a href="tel:+918866689174" className="opacity-80 hover:text-apt-blue transition-colors duration-200">
+                    <a href="tel:+918866689174" className="opacity-80 hover:text-apt-purple transition-colors duration-200">
                       +91 8866689174
                     </a>
                   </div>
                 </li>
                 <li className="flex items-start group">
-                  <MailIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" />
+                  <div className="bg-apt-purple/10 rounded-full p-3 text-apt-purple group-hover:bg-apt-purple group-hover:text-white transition-colors duration-300 mr-4 shrink-0">
+                    <MailIcon className="w-6 h-6" />
+                  </div>
                   <div>
                     <h4 className="font-medium mb-1">Email Address</h4>
-                    <a href="mailto:affinityaltitudeaccumate@gmail.com" className="opacity-80 hover:text-apt-blue transition-colors duration-200">
+                    <a href="mailto:affinityaltitudeaccumate@gmail.com" className="opacity-80 hover:text-apt-purple transition-colors duration-200">
                       affinityaltitudeaccumate@gmail.com
                     </a>
+                  </div>
+                </li>
+                <li className="flex items-start group">
+                  <div className="bg-apt-purple/10 rounded-full p-3 text-apt-purple group-hover:bg-apt-purple group-hover:text-white transition-colors duration-300 mr-4 shrink-0">
+                    <Clock className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-1">Business Hours</h4>
+                    <p className="opacity-80">
+                      Monday - Friday: 9:00 AM - 5:00 PM<br />
+                      Saturday: 10:00 AM - 2:00 PM<br />
+                      Sunday: Closed
+                    </p>
                   </div>
                 </li>
               </ul>
             </div>
             
-            <div>
-              <h3 className="text-2xl font-medium mb-6">Business Hours</h3>
-              <ul className="space-y-3">
-                <li className="flex justify-between">
-                  <span className="font-medium">Monday - Friday</span>
-                  <span className="opacity-80">9:00 AM - 5:00 PM</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="font-medium">Saturday</span>
-                  <span className="opacity-80">10:00 AM - 2:00 PM</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="font-medium">Sunday</span>
-                  <span className="opacity-80">Closed</span>
-                </li>
-              </ul>
-            </div>
-            
-            {/* FAQ Section with Improved Dropdown */}
-            <div>
-              <h3 className="text-2xl font-medium mb-6">Frequently Asked Questions</h3>
+            {/* FAQ Section */}
+            <div className="bg-white rounded-lg shadow-affinity p-6 border border-gray-100">
+              <h3 className="text-2xl font-bold mb-6 text-apt-darkgray">FAQ</h3>
               <div className="space-y-4">
                 {faqItems.map((faq, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg overflow-hidden transition-all duration-300 hover:border-apt-blue/30">
+                  <div key={index} className="border border-gray-200 rounded-lg overflow-hidden transition-all duration-300 hover:border-apt-purple/30">
                     <button
                       onClick={() => toggleFaq(index)}
                       className="flex w-full justify-between items-center text-left p-4 hover:bg-gray-50 transition-colors"
@@ -162,7 +165,7 @@ const Contact = () => {
                       aria-controls={`faq-answer-${index}`}
                     >
                       <span className="font-medium">{faq.question}</span>
-                      <span className={`ml-2 ${openFaqIndex === index ? 'bg-apt-blue text-white' : 'bg-apt-blue/10 text-apt-blue'} rounded-full p-1 transition-colors duration-300`}>
+                      <span className={`ml-2 ${openFaqIndex === index ? 'bg-apt-purple text-white' : 'bg-apt-purple/10 text-apt-purple'} rounded-full p-1 transition-colors duration-300`}>
                         {openFaqIndex === index ? <Minus size={18} /> : <Plus size={18} />}
                       </span>
                     </button>
@@ -180,16 +183,16 @@ const Contact = () => {
             </div>
           </div>
           
-          <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
-            <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-              <h3 className="text-2xl font-medium mb-6">Send Us a Message</h3>
+          <div className="lg:col-span-7 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+            <div className="bg-white rounded-lg shadow-affinity p-8 border border-gray-100 hover:shadow-affinity-hover transition-shadow duration-300">
+              <h3 className="text-2xl font-bold mb-6 text-apt-darkgray">Send Us a Message</h3>
               
               {isSubmitted ? (
                 <div className="text-center py-8 animate-fade-in">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 mb-4 animate-bounce-slow">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h4 className="text-xl font-medium mb-2">Message Sent!</h4>
+                  <h4 className="text-xl font-bold mb-2">Message Sent!</h4>
                   <p className="opacity-80">Thank you for contacting us. We'll get back to you shortly.</p>
                 </div>
               ) : (
@@ -205,7 +208,7 @@ const Contact = () => {
                       value={formState.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-apt-blue focus:ring focus:ring-apt-blue/20 transition-all outline-none"
+                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-apt-purple focus:ring focus:ring-apt-purple/20 transition-all outline-none"
                       placeholder="John Doe"
                     />
                   </div>
@@ -222,7 +225,7 @@ const Contact = () => {
                         value={formState.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-apt-blue focus:ring focus:ring-apt-blue/20 transition-all outline-none"
+                        className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-apt-purple focus:ring focus:ring-apt-purple/20 transition-all outline-none"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -237,7 +240,7 @@ const Contact = () => {
                         name="phone"
                         value={formState.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-apt-blue focus:ring focus:ring-apt-blue/20 transition-all outline-none"
+                        className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-apt-purple focus:ring focus:ring-apt-purple/20 transition-all outline-none"
                         placeholder="+91 9999999999"
                       />
                     </div>
@@ -254,7 +257,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       rows={4}
-                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-apt-blue focus:ring focus:ring-apt-blue/20 transition-all outline-none resize-none"
+                      className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-apt-purple focus:ring focus:ring-apt-purple/20 transition-all outline-none resize-none"
                       placeholder="How can we help you?"
                     />
                   </div>
@@ -262,7 +265,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-primary w-full flex items-center justify-center group hover:scale-105 transition-transform duration-300"
+                    className="bg-affinity-gradient text-white px-6 py-3 rounded-md font-medium w-full flex items-center justify-center group shadow-md hover:shadow-lg transition-all"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center">
