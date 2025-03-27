@@ -55,7 +55,7 @@ const Navbar = () => {
         <div className="container-tight">
           <div className="flex justify-between items-center">
             <div>
-              <p className="text-sm font-medium">Welcome to Affinity Altitude Accumate</p>
+              {/* Removed the welcome text */}
             </div>
             <div className="flex items-center space-x-4">
               <a href="tel:+919274320379" className="flex items-center text-sm hover:text-white/80 transition-colors">
