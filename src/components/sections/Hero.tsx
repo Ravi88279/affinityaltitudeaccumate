@@ -4,20 +4,20 @@ import { ChevronRight, CheckCircle2 } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-[#f9faff]">
+    <section className="relative pt-16 pb-8 md:pt-20 md:pb-12 overflow-hidden bg-[#f9faff]">
       <div className="absolute inset-0 bg-gradient-to-br from-[#f9faff] to-[#f0f0ff] -z-10">
         <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-10"></div>
       </div>
       
       {/* Floating particles effect */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(15)].map((_, i) => (
+        {[...Array(10)].map((_, i) => (
           <div
             key={i}
             className="absolute rounded-full bg-apt-purple/20 animate-float"
             style={{
-              width: `${Math.random() * 30 + 10}px`,
-              height: `${Math.random() * 30 + 10}px`,
+              width: `${Math.random() * 20 + 10}px`,
+              height: `${Math.random() * 20 + 10}px`,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animationDuration: `${Math.random() * 15 + 10}s`,
@@ -27,14 +27,14 @@ const Hero = () => {
         ))}
       </div>
       
-      <div className="container-tight min-h-[70vh] md:min-h-[80vh] flex flex-col justify-center relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 animate-fade-in">
+      <div className="container-tight min-h-[50vh] md:min-h-[60vh] flex flex-col justify-center relative z-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div className="space-y-4 animate-fade-in">
             <div className="inline-block bg-apt-purple/10 text-apt-purple font-medium px-4 py-1 rounded-full text-sm">
               Professional Accounting & Bookkeeping Services
             </div>
             
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-apt-darkgray">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-apt-darkgray">
               Financial Solutions <br />
               <span className="text-apt-purple animate-text-gradient bg-gradient-to-r from-apt-purple via-apt-lightpurple to-apt-purple bg-clip-text text-transparent bg-300%">for Your Business</span>
             </h1>
@@ -44,7 +44,7 @@ const Hero = () => {
               Our professional team is dedicated to delivering accurate and timely financial solutions.
             </p>
             
-            <div className="space-y-4 md:space-y-0 pt-2 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+            <div className="space-y-3 md:space-y-0 pt-2 animate-fade-up" style={{ animationDelay: '0.4s' }}>
               <div className="flex flex-wrap gap-4">
                 <Link to="/contact" className="bg-affinity-gradient text-white px-6 py-3 rounded-md font-medium flex items-center group shadow-md hover:shadow-lg transition-all">
                   Get Started
@@ -55,7 +55,7 @@ const Hero = () => {
                 </Link>
               </div>
               
-              <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 mt-8">
+              <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 mt-4">
                 <div className="flex items-center">
                   <CheckCircle2 className="text-apt-purple mr-2 h-5 w-5" />
                   <span className="text-sm font-medium">Expert Team</span>
@@ -78,7 +78,7 @@ const Hero = () => {
               <img 
                 src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
                 alt="Business professionals reviewing financial documents"
-                className="rounded-2xl shadow-xl rotate-3 transition-all duration-500 hover:rotate-0 relative z-10 object-cover h-[400px] md:h-[500px] w-full"
+                className="rounded-2xl shadow-xl rotate-3 transition-all duration-500 hover:rotate-0 relative z-10 object-cover h-[300px] md:h-[380px] w-full"
               />
               <div className="absolute -bottom-4 -right-4 bg-white px-5 py-3 rounded-lg shadow-lg z-20 animate-bounce-slow">
                 <span className="font-bold text-apt-purple">Financial Excellence</span>

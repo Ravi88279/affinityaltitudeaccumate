@@ -87,15 +87,15 @@
   }
   
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
+    @apply text-3xl md:text-4xl lg:text-5xl;
   }
   
   h2 {
-    @apply text-3xl md:text-4xl;
+    @apply text-2xl md:text-3xl;
   }
   
   h3 {
-    @apply text-2xl md:text-3xl;
+    @apply text-xl md:text-2xl;
   }
   
   p {
@@ -105,26 +105,26 @@
 
 @layer components {
   .container-tight {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-4 sm:px-5 lg:px-6;
   }
   
   .btn-primary {
-    @apply bg-apt-purple text-white px-6 py-3 rounded-md font-medium transition-all shadow-md
+    @apply bg-apt-purple text-white px-5 py-2.5 rounded-md font-medium transition-all shadow-md
            hover:bg-apt-lightpurple hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-apt-purple/30;
   }
   
   .btn-secondary {
-    @apply bg-apt-blue text-white px-6 py-3 rounded-md font-medium transition-all shadow-md
+    @apply bg-apt-blue text-white px-5 py-2.5 rounded-md font-medium transition-all shadow-md
            hover:bg-apt-lightblue hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-apt-blue/30;
   }
   
   .btn-ghost {
-    @apply bg-transparent text-apt-purple border border-apt-purple px-6 py-3 rounded-md font-medium
+    @apply bg-transparent text-apt-purple border border-apt-purple px-5 py-2.5 rounded-md font-medium
            transition-all hover:bg-apt-purple/10 focus:outline-none focus:ring-2 focus:ring-apt-purple/30;
   }
   
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-8 md:py-12;
   }
   
   .heading-underline {
