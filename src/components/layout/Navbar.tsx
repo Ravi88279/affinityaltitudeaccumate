@@ -58,9 +58,9 @@ const Navbar = () => {
               <p className="text-sm font-medium">Welcome to Affinity Altitude Accumate</p>
             </div>
             <div className="flex items-center space-x-4">
-              <a href="tel:+918866689174" className="flex items-center text-sm hover:text-white/80 transition-colors">
+              <a href="tel:+919274320379" className="flex items-center text-sm hover:text-white/80 transition-colors">
                 <Phone className="h-4 w-4 mr-1" />
-                +91 8866689174
+                +91 9274320379
               </a>
               <a href="mailto:affinityaltitudeaccumate@gmail.com" className="flex items-center text-sm hover:text-white/80 transition-colors">
                 <Mail className="h-4 w-4 mr-1" />
@@ -159,9 +159,9 @@ const Navbar = () => {
                 ))}
                 
                 <div className="pt-4 flex flex-col space-y-4">
-                  <a href="tel:+918866689174" className="flex items-center text-apt-text">
+                  <a href="tel:+919274320379" className="flex items-center text-apt-text">
                     <Phone className="h-5 w-5 mr-2 text-apt-purple" />
-                    +91 8866689174
+                    +91 9274320379
                   </a>
                   <a href="mailto:affinityaltitudeaccumate@gmail.com" className="flex items-center text-apt-text">
                     <Mail className="h-5 w-5 mr-2 text-apt-purple" />

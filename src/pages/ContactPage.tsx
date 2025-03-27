@@ -67,9 +67,9 @@ const ContactPage = () => {
       
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pt-20">
+        <main className="flex-grow pt-16">
           {/* Hero Section */}
-          <section className="bg-apt-blue text-white py-20 relative overflow-hidden">
+          <section className="bg-apt-blue text-white py-16 relative overflow-hidden">
             <div className="absolute inset-0 bg-apt-blue/30 mix-blend-overlay" />
             <div className="absolute inset-0 overflow-hidden">
               {[...Array(15)].map((_, i) => (
@@ -89,7 +89,7 @@ const ContactPage = () => {
             </div>
             <div className="container-tight relative z-10">
               <div className="max-w-3xl mx-auto text-center animate-fade-up">
-                <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Get In Touch</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">Get In Touch</h1>
                 <p className="text-xl text-white/90 leading-relaxed">
                   We're here to answer your questions and provide the financial support your business needs.
                 </p>
@@ -98,21 +98,21 @@ const ContactPage = () => {
           </section>
           
           {/* Contact Form Section */}
-          <section className="py-20 bg-white relative overflow-hidden">
+          <section className="py-16 bg-white relative overflow-hidden">
             <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-apt-blue/10 rounded-full filter blur-3xl"></div>
             <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-apt-lightblue/10 rounded-full filter blur-3xl"></div>
             
             <div className="container-tight relative z-10">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <div className="space-y-10 animate-fade-up">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div className="space-y-8 animate-fade-up">
                   <div>
-                    <h2 className="heading-underline text-3xl font-semibold mb-6">Contact Information</h2>
-                    <p className="text-lg mb-8">
+                    <h2 className="heading-underline text-3xl font-semibold mb-4">Contact Information</h2>
+                    <p className="text-lg mb-6">
                       Whether you're looking for information about our services or ready to start working with us,
                       we're here to help. Reach out using the contact details below.
                     </p>
                     
-                    <ul className="space-y-8">
+                    <ul className="space-y-6">
                       <li className="flex items-start group">
                         <MapPinIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" />
                         <div>
@@ -131,8 +131,8 @@ const ContactPage = () => {
                         <PhoneIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" />
                         <div>
                           <h4 className="font-medium mb-1">Phone Number</h4>
-                          <a href="tel:+918866689174" className="opacity-80 hover:text-apt-blue transition-colors duration-200">
-                            +91 8866689174
+                          <a href="tel:+919274320379" className="opacity-80 hover:text-apt-blue transition-colors duration-200">
+                            +91 9274320379
                           </a>
                         </div>
                       </li>
@@ -149,8 +149,8 @@ const ContactPage = () => {
                   </div>
                   
                   <div>
-                    <h3 className="text-2xl font-medium mb-6">Business Hours</h3>
-                    <ul className="space-y-3">
+                    <h3 className="text-2xl font-medium mb-4">Business Hours</h3>
+                    <ul className="space-y-2">
                       <li className="flex justify-between group hover:bg-apt-gray p-2 rounded-md transition-all duration-300">
                         <span className="font-medium">Monday - Friday</span>
                         <span className="opacity-80 group-hover:text-apt-blue group-hover:opacity-100 transition-all duration-300">9:00 AM - 5:00 PM</span>
@@ -166,8 +166,8 @@ const ContactPage = () => {
                     </ul>
                   </div>
                   
-                  <div className="bg-apt-gray p-8 rounded-lg hover:shadow-lg transition-shadow duration-300">
-                    <h3 className="text-2xl font-medium mb-4">Location Map</h3>
+                  <div className="bg-apt-gray p-6 rounded-lg hover:shadow-lg transition-shadow duration-300">
+                    <h3 className="text-2xl font-medium mb-3">Location Map</h3>
                     <a 
                       href={mapUrl}
                       target="_blank"
@@ -185,22 +185,22 @@ const ContactPage = () => {
                 </div>
                 
                 <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
-                  <div className="bg-white rounded-lg shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-                    <h2 className="text-3xl font-semibold mb-6">Send Us a Message</h2>
+                  <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                    <h2 className="text-3xl font-semibold mb-5">Send Us a Message</h2>
                     
                     {isSubmitted ? (
-                      <div className="text-center py-16 animate-fade-in">
-                        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 text-green-600 mb-6 animate-bounce-slow">
+                      <div className="text-center py-12 animate-fade-in">
+                        <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 text-green-600 mb-4 animate-bounce-slow">
                           <CheckCircle2 className="w-10 h-10" />
                         </div>
-                        <h3 className="text-2xl font-medium mb-4">Message Sent Successfully!</h3>
+                        <h3 className="text-2xl font-medium mb-3">Message Sent Successfully!</h3>
                         <p className="text-lg opacity-80 max-w-md mx-auto">
                           Thank you for contacting Affinity Altitude Accumate. We'll review your message and get back to you shortly.
                         </p>
                       </div>
                     ) : (
-                      <form onSubmit={handleSubmit} className="space-y-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <form onSubmit={handleSubmit} className="space-y-5">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                           <div>
                             <label htmlFor="name" className="block text-sm font-medium text-apt-darkgray mb-1">
                               Your Name*
@@ -234,7 +234,7 @@ const ContactPage = () => {
                           </div>
                         </div>
                         
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                           <div>
                             <label htmlFor="phone" className="block text-sm font-medium text-apt-darkgray mb-1">
                               Phone Number
@@ -246,7 +246,7 @@ const ContactPage = () => {
                               value={formState.phone}
                               onChange={handleChange}
                               className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-apt-blue focus:ring focus:ring-apt-blue/20 transition-all outline-none"
-                              placeholder="+91 9999999999"
+                              placeholder="+91 9274320379"
                             />
                           </div>
                           
@@ -298,7 +298,7 @@ const ContactPage = () => {
                             value={formState.message}
                             onChange={handleChange}
                             required
-                            rows={5}
+                            rows={4}
                             className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-apt-blue focus:ring focus:ring-apt-blue/20 transition-all outline-none resize-none"
                             placeholder="How can we help you?"
                           />
@@ -333,11 +333,11 @@ const ContactPage = () => {
           </section>
           
           {/* FAQ Section */}
-          <section className="py-20 bg-apt-gray">
+          <section className="py-16 bg-apt-gray">
             <div className="container-tight">
-              <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
-                <div className="text-apt-blue font-medium mb-3">FAQ</div>
-                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-6">
+              <div className="max-w-3xl mx-auto text-center mb-10 animate-fade-up">
+                <div className="text-apt-blue font-medium mb-2">FAQ</div>
+                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-4">
                   Frequently Asked Questions
                 </h2>
                 <p className="text-lg opacity-80">
@@ -345,7 +345,7 @@ const ContactPage = () => {
                 </p>
               </div>
               
-              <div className="max-w-4xl mx-auto space-y-4">
+              <div className="max-w-4xl mx-auto space-y-3">
                 {[
                   {
                     question: "What services do you offer?",
@@ -375,7 +375,7 @@ const ContactPage = () => {
                   >
                     <button
                       onClick={() => toggleFaq(index)}
-                      className="flex w-full justify-between items-center text-left p-6 hover:bg-gray-50 transition-colors rounded-lg"
+                      className="flex w-full justify-between items-center text-left p-5 hover:bg-gray-50 transition-colors rounded-lg"
                     >
                       <h3 className="text-xl font-medium">{faq.question}</h3>
                       <span className="ml-4 bg-apt-blue/10 rounded-full p-2 text-apt-blue shrink-0">
@@ -383,8 +383,8 @@ const ContactPage = () => {
                       </span>
                     </button>
                     <div 
-                      className={`transition-all duration-300 overflow-hidden px-6 ${
-                        openFaqIndex === index ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0 pb-0'
+                      className={`transition-all duration-300 overflow-hidden px-5 ${
+                        openFaqIndex === index ? 'max-h-96 opacity-100 pb-5' : 'max-h-0 opacity-0 pb-0'
                       }`}
                     >
                       <p className="opacity-80">{faq.answer}</p>

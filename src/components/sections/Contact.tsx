@@ -76,28 +76,28 @@ const Contact = () => {
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(officeAddress)}`;
   
   return (
-    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-white relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-apt-purple/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-apt-purple/5 rounded-full blur-3xl"></div>
       
       <div className="container-tight relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-up">
-          <div className="inline-block bg-apt-purple/10 text-apt-purple font-medium px-4 py-1 rounded-full text-sm mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-up">
+          <div className="inline-block bg-apt-purple/10 text-apt-purple font-medium px-4 py-1 rounded-full text-sm mb-3">
             Contact Us
           </div>
-          <h2 className="heading-underline-center text-3xl md:text-4xl font-bold mb-6">Get In Touch With Our Team</h2>
+          <h2 className="heading-underline-center text-3xl md:text-4xl font-bold mb-4">Get In Touch With Our Team</h2>
           <p className="text-lg opacity-80">
             Have questions about our services? Ready to get started? 
             Our team is here to help with all your financial needs.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          <div className="lg:col-span-5 space-y-8 animate-fade-up">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-5 space-y-6 animate-fade-up">
             <div className="bg-white rounded-lg shadow-affinity p-6 border border-gray-100">
-              <h3 className="text-2xl font-bold mb-6 text-apt-darkgray">Contact Information</h3>
-              <ul className="space-y-6">
+              <h3 className="text-2xl font-bold mb-5 text-apt-darkgray">Contact Information</h3>
+              <ul className="space-y-5">
                 <li className="flex items-start group">
                   <div className="bg-apt-purple/10 rounded-full p-3 text-apt-purple group-hover:bg-apt-purple group-hover:text-white transition-colors duration-300 mr-4 shrink-0">
                     <MapPinIcon className="w-6 h-6" />
@@ -120,8 +120,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Phone Number</h4>
-                    <a href="tel:+918866689174" className="opacity-80 hover:text-apt-purple transition-colors duration-200">
-                      +91 8866689174
+                    <a href="tel:+919274320379" className="opacity-80 hover:text-apt-purple transition-colors duration-200">
+                      +91 9274320379
                     </a>
                   </div>
                 </li>
@@ -154,8 +154,8 @@ const Contact = () => {
             
             {/* FAQ Section */}
             <div className="bg-white rounded-lg shadow-affinity p-6 border border-gray-100">
-              <h3 className="text-2xl font-bold mb-6 text-apt-darkgray">FAQ</h3>
-              <div className="space-y-4">
+              <h3 className="text-2xl font-bold mb-5 text-apt-darkgray">FAQ</h3>
+              <div className="space-y-3">
                 {faqItems.map((faq, index) => (
                   <div key={index} className="border border-gray-200 rounded-lg overflow-hidden transition-all duration-300 hover:border-apt-purple/30">
                     <button
@@ -184,8 +184,8 @@ const Contact = () => {
           </div>
           
           <div className="lg:col-span-7 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-            <div className="bg-white rounded-lg shadow-affinity p-8 border border-gray-100 hover:shadow-affinity-hover transition-shadow duration-300">
-              <h3 className="text-2xl font-bold mb-6 text-apt-darkgray">Send Us a Message</h3>
+            <div className="bg-white rounded-lg shadow-affinity p-6 border border-gray-100 hover:shadow-affinity-hover transition-shadow duration-300">
+              <h3 className="text-2xl font-bold mb-5 text-apt-darkgray">Send Us a Message</h3>
               
               {isSubmitted ? (
                 <div className="text-center py-8 animate-fade-in">
@@ -196,7 +196,7 @@ const Contact = () => {
                   <p className="opacity-80">Thank you for contacting us. We'll get back to you shortly.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-apt-darkgray mb-1">
                       Your Name
@@ -213,7 +213,7 @@ const Contact = () => {
                     />
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-apt-darkgray mb-1">
                         Email Address
@@ -241,7 +241,7 @@ const Contact = () => {
                         value={formState.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-apt-purple focus:ring focus:ring-apt-purple/20 transition-all outline-none"
-                        placeholder="+91 9999999999"
+                        placeholder="+91 9274320379"
                       />
                     </div>
                   </div>

@@ -1,3 +1,4 @@
+
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -70,7 +71,7 @@ const AboutPage = () => {
         <Navbar />
         <main className="flex-grow pt-16">
           {/* Hero Section */}
-          <section className="bg-apt-blue text-white py-20 relative overflow-hidden">
+          <section className="bg-apt-blue text-white py-16 relative overflow-hidden">
             <div className="absolute inset-0 bg-apt-blue/30 mix-blend-overlay" />
             <div className="absolute inset-0 overflow-hidden">
               {[...Array(15)].map((_, i) => (
@@ -90,7 +91,7 @@ const AboutPage = () => {
             </div>
             <div className="container-tight relative z-10">
               <div className="max-w-3xl mx-auto text-center animate-fade-up">
-                <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">About Our Company</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">About Our Company</h1>
                 <p className="text-xl text-white/90 leading-relaxed">
                   We're a team of dedicated professionals committed to providing exceptional 
                   financial services to businesses of all sizes across Australia.
@@ -100,13 +101,13 @@ const AboutPage = () => {
           </section>
           
           {/* Our Story */}
-          <section className="py-20 bg-white relative overflow-hidden">
+          <section className="py-16 bg-white relative overflow-hidden">
             <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-apt-blue/10 rounded-full filter blur-3xl"></div>
             <div className="container-tight relative z-10">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div className="space-y-6 animate-fade-up">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="space-y-4 animate-fade-up">
                   <div className="text-apt-blue font-medium">Our Story</div>
-                  <h2 className="heading-underline text-3xl md:text-4xl font-semibold mb-6">
+                  <h2 className="heading-underline text-3xl md:text-4xl font-semibold mb-4">
                     A New Vision for Financial Services in Australia
                   </h2>
                   <p className="text-lg">
@@ -148,11 +149,11 @@ const AboutPage = () => {
           </section>
           
           {/* Our Journey */}
-          <section className="py-20 bg-apt-gray relative overflow-hidden">
+          <section className="py-16 bg-apt-gray relative overflow-hidden">
             <div className="container-tight relative z-10">
-              <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
-                <div className="text-apt-blue font-medium mb-3">Our Journey</div>
-                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-6">
+              <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-up">
+                <div className="text-apt-blue font-medium mb-2">Our Journey</div>
+                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-4">
                   The Affinity Altitude Accumate Story
                 </h2>
                 <p className="text-lg opacity-80">
@@ -167,18 +168,18 @@ const AboutPage = () => {
                 {journey.map((milestone, index) => (
                   <div 
                     key={index} 
-                    className={`relative z-10 flex flex-col md:flex-row items-center mb-16 last:mb-0 animate-fade-up ${
+                    className={`relative z-10 flex flex-col md:flex-row items-center mb-12 last:mb-0 animate-fade-up ${
                       index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                     }`}
                     style={{ animationDelay: `${index * 0.2}s` }}
                   >
-                    <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right md:pr-12' : 'md:text-left md:pl-12'}`}>
+                    <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right md:pr-10' : 'md:text-left md:pl-10'}`}>
                       <div className="text-apt-blue font-medium mb-2">{milestone.year}</div>
-                      <h3 className="text-2xl font-semibold mb-3">{milestone.title}</h3>
+                      <h3 className="text-2xl font-semibold mb-2">{milestone.title}</h3>
                       <p>{milestone.description}</p>
                     </div>
                     
-                    <div className="my-6 md:my-0 bg-apt-blue text-white h-12 w-12 rounded-full flex items-center justify-center z-20 shadow-lg">
+                    <div className="my-5 md:my-0 bg-apt-blue text-white h-12 w-12 rounded-full flex items-center justify-center z-20 shadow-lg">
                       <span className="font-bold">{index + 1}</span>
                     </div>
                     
@@ -190,12 +191,12 @@ const AboutPage = () => {
           </section>
           
           {/* Our Values */}
-          <section className="py-20 bg-white relative overflow-hidden">
+          <section className="py-16 bg-white relative overflow-hidden">
             <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-apt-lightblue/10 rounded-full filter blur-3xl"></div>
             <div className="container-tight relative z-10">
-              <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
-                <div className="text-apt-blue font-medium mb-3">Our Values</div>
-                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-6">
+              <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-up">
+                <div className="text-apt-blue font-medium mb-2">Our Values</div>
+                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-4">
                   The Principles That Guide Us
                 </h2>
                 <p className="text-lg opacity-80">
@@ -204,21 +205,21 @@ const AboutPage = () => {
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {values.map((value, index) => (
                   <Link
                     key={value.id}
                     to={`/values/${value.id}`}
-                    className="bg-white p-8 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300 group"
+                    className="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 animate-fade-up hover:-translate-y-2 transition-transform duration-300 group"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-6 relative">
+                    <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mb-4 relative">
                       {value.icon}
                       <div className="absolute top-0 right-0 bg-apt-blue text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <ArrowUpRight className="h-4 w-4" />
                       </div>
                     </div>
-                    <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
+                    <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
                     <p>{value.description}</p>
                   </Link>
                 ))}
@@ -227,11 +228,11 @@ const AboutPage = () => {
           </section>
           
           {/* Contact Section */}
-          <section className="py-20 bg-apt-gray">
+          <section className="py-16 bg-apt-gray">
             <div className="container-tight">
-              <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-up">
-                <div className="text-apt-blue font-medium mb-3">Get In Touch</div>
-                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-6">
+              <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-up">
+                <div className="text-apt-blue font-medium mb-2">Get In Touch</div>
+                <h2 className="heading-underline-center text-3xl md:text-4xl font-semibold mb-4">
                   Contact Our Team
                 </h2>
                 <p className="text-lg opacity-80">
@@ -239,47 +240,47 @@ const AboutPage = () => {
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <a 
                   href={officeLocation.mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white p-8 rounded-lg shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
+                  className="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
                 >
-                  <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                  <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                     <MapPin className="h-8 w-8 text-apt-blue" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">Our Office</h3>
+                  <h3 className="text-xl font-semibold mb-2">Our Office</h3>
                   <p className="group-hover:text-apt-blue transition-colors">{officeLocation.address}</p>
-                  <div className="text-apt-blue mt-4 opacity-0 group-hover:opacity-100 transition-all">View Map →</div>
+                  <div className="text-apt-blue mt-3 opacity-0 group-hover:opacity-100 transition-all">View Map →</div>
                 </a>
                 
                 <a 
                   href="mailto:affinityaltitudeaccumate@gmail.com"
-                  className="bg-white p-8 rounded-lg shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
+                  className="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
                 >
-                  <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                  <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                     <Mail className="h-8 w-8 text-apt-blue" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">Email Us</h3>
+                  <h3 className="text-xl font-semibold mb-2">Email Us</h3>
                   <p className="group-hover:text-apt-blue transition-colors">affinityaltitudeaccumate@gmail.com</p>
-                  <div className="text-apt-blue mt-4 opacity-0 group-hover:opacity-100 transition-all">Send Email →</div>
+                  <div className="text-apt-blue mt-3 opacity-0 group-hover:opacity-100 transition-all">Send Email →</div>
                 </a>
                 
                 <a 
-                  href="tel:+918866689174"
-                  className="bg-white p-8 rounded-lg shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
+                  href="tel:+919274320379"
+                  className="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
                 >
-                  <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                  <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                     <Phone className="h-8 w-8 text-apt-blue" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">Call Us</h3>
-                  <p className="group-hover:text-apt-blue transition-colors">+91 8866689174</p>
-                  <div className="text-apt-blue mt-4 opacity-0 group-hover:opacity-100 transition-all">Call Now →</div>
+                  <h3 className="text-xl font-semibold mb-2">Call Us</h3>
+                  <p className="group-hover:text-apt-blue transition-colors">+91 9274320379</p>
+                  <div className="text-apt-blue mt-3 opacity-0 group-hover:opacity-100 transition-all">Call Now →</div>
                 </a>
               </div>
               
-              <div className="text-center mt-12">
+              <div className="text-center mt-8">
                 <Link to="/contact" className="btn-primary">
                   Contact Us Now
                 </Link>
