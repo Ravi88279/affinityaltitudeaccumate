@@ -15,7 +15,7 @@ const Index = () => {
       
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pt-14 py-px">
+        <main className="flex-grow pt-14 py-0">
           <Hero />
           <Services />
           <About />
