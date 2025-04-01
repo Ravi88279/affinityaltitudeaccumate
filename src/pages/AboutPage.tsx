@@ -263,7 +263,7 @@ const AboutPage = () => {
                     <Mail className="h-8 w-8 text-apt-blue" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Email Us</h3>
-                  <p className="group-hover:text-apt-blue transition-colors">affinityaltitudeaccumate@gmail.com</p>
+                  <p className="group-hover:text-apt-blue transition-colors">info@affinityaltitudeservices.com</p>
                   <div className="text-apt-blue mt-3 opacity-0 group-hover:opacity-100 transition-all">Send Email →</div>
                 </a>
                 
