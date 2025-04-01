@@ -140,8 +140,8 @@ const ContactPage = () => {
                         <MailIcon className="w-6 h-6 text-apt-blue shrink-0 mr-4 mt-1 group-hover:scale-110 transition-transform duration-300" />
                         <div>
                           <h4 className="font-medium mb-1">Email Address</h4>
-                          <a href="mailto:affinityaltitudeaccumate@gmail.com" className="opacity-80 hover:text-apt-blue transition-colors duration-200">
-                            affinityaltitudeaccumate@gmail.com
+                          <a href="mailto:info@affinityaltitudeservices.com" className="opacity-80 hover:text-apt-blue transition-colors duration-200">
+                            info@affinityaltitudeservices.com
                           </a>
                         </div>
                       </li>
