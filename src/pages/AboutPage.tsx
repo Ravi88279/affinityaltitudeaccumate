@@ -256,7 +256,7 @@ const AboutPage = () => {
                 </a>
                 
                 <a 
-                  href="mailto:affinityaltitudeaccumate@gmail.com"
+                  href="mailto:info@affinityaltitudeservices.com"
                   className="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
                 >
                   <div className="bg-apt-blue/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
