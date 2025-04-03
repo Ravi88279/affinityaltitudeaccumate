@@ -116,8 +116,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <MailIcon className="w-5 h-5 text-apt-purple shrink-0 mr-3" />
-                <a href="mailto:affinityaltitudeaccumate@gmail.com" className="text-gray-300 hover:text-white transition-colors duration-200">
-                  affinityaltitudeaccumate@gmail.com
+                <a href="mailto:info@affinityaltitudeservices.com" className="text-gray-300 hover:text-white transition-colors duration-200">
+                  info@affinityaltitudeservices.com
                 </a>
               </li>
             </ul>

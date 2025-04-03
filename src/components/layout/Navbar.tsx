@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -62,9 +61,9 @@ const Navbar = () => {
                 <Phone className="h-4 w-4 mr-1" />
                 +91 9274320379
               </a>
-              <a href="mailto:affinityaltitudeaccumate@gmail.com" className="flex items-center text-sm hover:text-white/80 transition-colors">
+              <a href="mailto:info@affinityaltitudeservices.com" className="flex items-center text-sm hover:text-white/80 transition-colors">
                 <Mail className="h-4 w-4 mr-1" />
-                affinityaltitudeaccumate@gmail.com
+                info@affinityaltitudeservices.com
               </a>
             </div>
           </div>
@@ -163,9 +162,9 @@ const Navbar = () => {
                     <Phone className="h-5 w-5 mr-2 text-apt-purple" />
                     +91 9274320379
                   </a>
-                  <a href="mailto:affinityaltitudeaccumate@gmail.com" className="flex items-center text-apt-text">
+                  <a href="mailto:info@affinityaltitudeservices.com" className="flex items-center text-apt-text">
                     <Mail className="h-5 w-5 mr-2 text-apt-purple" />
-                    affinityaltitudeaccumate@gmail.com
+                    info@affinityaltitudeservices.com
                   </a>
                 </div>
                 

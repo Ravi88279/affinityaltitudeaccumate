@@ -1,3 +1,4 @@
+
 import { FormEvent, useState } from 'react';
 import { MailIcon, MapPinIcon, PhoneIcon, Send, CheckCircle2, Plus, Minus, Clock } from 'lucide-react';
 type FaqItem = {
@@ -111,8 +112,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Email Address</h4>
-                    <a href="mailto:affinityaltitudeaccumate@gmail.com" className="opacity-80 hover:text-apt-purple transition-colors duration-200">
-                      affinityaltitudeaccumate@gmail.com
+                    <a href="mailto:info@affinityaltitudeservices.com" className="opacity-80 hover:text-apt-purple transition-colors duration-200">
+                      info@affinityaltitudeservices.com
                     </a>
                   </div>
                 </li>
