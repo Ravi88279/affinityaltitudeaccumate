@@ -1,6 +1,8 @@
 
 import React, { useState, FormEvent } from 'react';
 import { Send, CheckCircle2 } from 'lucide-react';
+import emailjs from 'emailjs-com';
+import { useToast } from '@/hooks/use-toast';
 
 const PageContactForm: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -14,6 +16,7 @@ const PageContactForm: React.FC = () => {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { toast } = useToast();
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormState({
@@ -22,12 +25,28 @@ const PageContactForm: React.FC = () => {
     });
   };
   
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    // EmailJS service configuration
+    // You'll need to replace these IDs with your actual EmailJS account details
+    const serviceId = 'YOUR_EMAILJS_SERVICE_ID';
+    const templateId = 'YOUR_EMAILJS_TEMPLATE_ID';
+    const userId = 'YOUR_EMAILJS_USER_ID';
+
+    try {
+      const templateParams = {
+        from_name: formState.name,
+        from_email: formState.email,
+        from_phone: formState.phone,
+        business: formState.business,
+        service: formState.service,
+        message: formState.message
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, userId);
+      
       setIsSubmitting(false);
       setIsSubmitted(true);
       setFormState({
@@ -39,11 +58,25 @@ const PageContactForm: React.FC = () => {
         message: '',
       });
       
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Thank you for contacting Affinity Altitude Accumate. We'll review your message and get back to you shortly.",
+      });
+
       // Reset success message after 5 seconds
       setTimeout(() => {
         setIsSubmitted(false);
       }, 5000);
-    }, 1500);
+    } catch (error) {
+      console.error('Failed to send the message:', error);
+      setIsSubmitting(false);
+      
+      toast({
+        title: "Error",
+        description: "Failed to send your message. Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
