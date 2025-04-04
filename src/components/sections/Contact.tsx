@@ -1,6 +1,4 @@
-
 import React from 'react';
-import { ContactInformation, ContactForm, FAQ, faqItems } from './contact';
 
 const Contact: React.FC = () => {
   // Office address for Google Maps
@@ -27,12 +25,24 @@ const Contact: React.FC = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-5 space-y-6 animate-fade-up">
-            <ContactInformation mapUrl={mapUrl} officeAddress={officeAddress} />
-            <FAQ faqItems={faqItems} />
+            {/* Placeholder for contact info or FAQs */}
+            <div className="p-4 border rounded-lg shadow text-sm text-gray-600 bg-gray-50">
+              <p><strong>Our Office:</strong></p>
+              <p>{officeAddress}</p>
+              <a className="text-blue-600 underline" href={mapUrl} target="_blank" rel="noopener noreferrer">
+                View on Google Maps
+              </a>
+            </div>
           </div>
           
           <div className="lg:col-span-7 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-            <ContactForm />
+            {/* Placeholder form */}
+            <form className="space-y-4 bg-white p-6 shadow rounded-lg border">
+              <input type="text" placeholder="Your Name" className="w-full border p-2 rounded" required />
+              <input type="email" placeholder="Your Email" className="w-full border p-2 rounded" required />
+              <textarea placeholder="Your Message" className="w-full border p-2 rounded" rows={4} required></textarea>
+              <button type="submit" className="bg-apt-purple text-white px-4 py-2 rounded">Send Message</button>
+            </form>
           </div>
         </div>
       </div>
